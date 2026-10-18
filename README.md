@@ -781,3 +781,5 @@ they are committed. If either file is deleted, `src/sentence_encoder.py`
 regenerates it on the next startup: the cache is keyed by a SHA-256 of the
 model name plus the exact texts, so editing a data file - or changing
 `MODEL_NAME` - invalidates both files and rewrites them automatically.
+
+Built by Tanishka.
