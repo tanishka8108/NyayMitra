@@ -4,7 +4,6 @@ import {
   Check,
   TriangleAlert,
   Scale,
-  MessageSquare,
 } from "lucide-react";
 
 
@@ -129,7 +128,6 @@ function snapshotKey(
 export default function LawyerPage({
   onBack,
   onViewProfile,
-  onChat,
 }: LawyerPageProps) {
   const { t, tm } = useT();
 

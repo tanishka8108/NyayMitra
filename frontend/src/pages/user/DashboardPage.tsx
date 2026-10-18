@@ -10,7 +10,6 @@ import {
   FileText,
   Languages,
   Clock,
-  Mic,
   History,
   BookOpen,
   ShieldCheck,
