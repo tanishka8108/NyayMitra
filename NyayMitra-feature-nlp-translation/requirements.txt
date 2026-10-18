@@ -92,6 +92,4 @@ pdfplumber==0.11.10
 pytesseract==0.3.13
 google-adk==2.12.0
 google-genai==2.31.0
-google-adk==2.12.0
-google-genai==2.31.0
 pdf2image==1.17.0
