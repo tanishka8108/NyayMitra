@@ -1,0 +1,66 @@
+/* =========================================================
+   THEME TOGGLE
+
+   A single icon button that flips light ↔ dark. Lives inside
+   the session pill by default, but is styled to work in any
+   container (auth screens, dashboards with their own shell).
+
+   The visuals are ink-on-quiet-surface: the toggle must be
+   reachable without competing with the Sign out button next
+   to it, in both themes.
+   ========================================================= */
+
+.nm-theme-toggle {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 1px solid var(--nm-border);
+  border-radius: 50%;
+
+  background: var(--nm-surface-2);
+  color: var(--nm-text-soft);
+
+  cursor: pointer;
+
+  transition:
+    background var(--nm-fast) var(--nm-ease),
+    color var(--nm-fast) var(--nm-ease),
+    border-color var(--nm-fast) var(--nm-ease),
+    transform var(--nm-fast) var(--nm-ease);
+}
+
+.nm-theme-toggle:hover {
+  background: var(--nm-primary-soft);
+  border-color: var(--nm-indigo-400);
+  color: var(--nm-primary-deep);
+}
+
+.nm-theme-toggle:active {
+  transform: scale(0.94);
+}
+
+.nm-theme-toggle svg {
+  width: 16px;
+  height: 16px;
+
+  display: block;
+}
+
+/* Inside the session pill the toggle drops its own chrome and
+   borrows the pill's surface, so the cluster reads as one unit. */
+.app-session-bar .nm-theme-toggle {
+  border-color: transparent;
+  background: transparent;
+}
+
+.app-session-bar .nm-theme-toggle:hover {
+  border-color: var(--nm-border);
+  background: var(--nm-primary-soft);
+}

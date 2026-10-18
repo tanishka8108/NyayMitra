@@ -1,0 +1,272 @@
+/* =========================================================
+   NYAYMITRA — DESIGN TOKENS & BASE
+
+   One place defines the palette every screen already uses:
+   navy/indigo on white over a cool blue-grey neutral, the
+   spacing and shape scale, the motion vocabulary, and the
+   focus ring shared by every interactive element.
+
+   LIGHT is the default. DARK is selected with
+   `<html data-theme="dark">` — set before first paint by the
+   inline script in index.html and thereafter by the theme
+   store (src/theme/theme.ts). Every token below has a dark
+   counterpart, so a component written against tokens is
+   theme-complete by construction: cards, text, inputs,
+   borders, shadows and statuses all swap together.
+
+   Loaded before App.css, so component sheets can always
+   override a token value for their own case while still
+   inheriting the system.
+   ========================================================= */
+
+:root {
+  /* ---- Brand: navy → indigo ---- */
+  --nm-navy-900: #141b33; /* headings, brand name */
+  --nm-navy-800: #1f2440;
+  --nm-indigo-700: #3730a3;
+  --nm-indigo-600: #4338ca;
+  --nm-indigo-500: #4f46e5; /* primary actions, active nav */
+  --nm-indigo-400: #7c6cf6; /* accents, violet highlight */
+  --nm-indigo-50: #eef0ff; /* wash behind active/selected */
+
+  /* ---- Semantic surfaces ---- */
+  --nm-bg: #f4f6fc; /* page background (soft blue-grey) */
+  --nm-bg-wash: #eaeef9; /* subtle blue gradient wash */
+  --nm-surface: #ffffff; /* cards, forms */
+  --nm-surface-2: #f7f8fd; /* input fills, quiet tiles */
+  --nm-surface-3: #eef1fb; /* hover fills, icon chips */
+
+  /* ---- Text ---- */
+  --nm-heading: #141b33; /* deep navy page/card headings */
+  --nm-text: #222b45; /* body copy */
+  --nm-text-soft: #59617a; /* secondary copy */
+  --nm-text-mute: #8a91a8; /* captions, meta, placeholders */
+
+  /* ---- Lines ---- */
+  --nm-border: #e3e7f4; /* card edges, inputs */
+  --nm-border-soft: #eceff8; /* dividers */
+
+  /* ---- Primary actions (indigo/violet) ---- */
+  --nm-primary: #4f46e5;
+  --nm-primary-deep: #4338ca;
+  --nm-primary-grad: linear-gradient(135deg, #4f46e5 0%, #7c6cf6 100%);
+  --nm-primary-soft: #eef0ff; /* lavender accent wash */
+  --nm-primary-ring: rgba(99, 102, 241, 0.35);
+  --nm-on-primary: #ffffff;
+
+  /* ---- Feedback ---- */
+  --nm-danger: #b42318;
+  --nm-danger-bg: #fef3f2;
+  --nm-danger-border: #fecdca;
+  --nm-success: #067647;
+  --nm-success-bg: #ecfdf3;
+  --nm-success-border: #abefc6;
+  --nm-warn: #b54708;
+  --nm-warn-bg: #fffaeb;
+  --nm-warn-border: #fedf89;
+  --nm-info: #175cd3;
+  --nm-info-bg: #eff8ff;
+  --nm-info-border: #b2ddff;
+
+  /* ---- Shape ---- */
+  --nm-radius-sm: 8px;
+  --nm-radius: 12px;
+  --nm-radius-lg: 16px;
+
+  /* ---- Elevation (low, cool-tinted — no heavy shadows) ---- */
+  --nm-shadow-sm: 0 1px 2px rgba(23, 32, 51, 0.06);
+  --nm-shadow: 0 6px 18px rgba(30, 35, 80, 0.07);
+  --nm-shadow-lg: 0 18px 40px rgba(30, 35, 80, 0.11);
+
+  /* ---- Motion: short, eased, purposeful ---- */
+  --nm-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --nm-fast: 150ms;
+  --nm-base: 220ms;
+
+  /* ---- Focus ring: one ring everywhere ---- */
+  --nm-focus-ring: 0 0 0 3px rgba(99, 102, 241, 0.38);
+
+  /* ---- Typography ---- */
+  --nm-font-sans: Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Elegant serif for display headings — system-resident faces
+     only, so it renders offline with no font download. */
+  --nm-font-serif: "Iowan Old Style", "Palatino Linotype", Palatino,
+    Georgia, "Times New Roman", serif;
+
+  /* ---- Branded bands (hero / footer strips) ---- */
+  --nm-hero-grad: linear-gradient(
+    135deg,
+    #171a3a 0%,
+    #24215a 45%,
+    #37338f 100%
+  );
+  --nm-hero-ink: #ffffff;
+  --nm-hero-ink-soft: #cbd0e7;
+  --nm-hero-accent: #a5b4fc;
+  --nm-hero-chip: rgba(255, 255, 255, 0.08);
+  --nm-hero-chip-border: rgba(255, 255, 255, 0.22);
+}
+
+/* =========================================================
+   DARK THEME
+
+   Midnight navy and charcoal backgrounds, slightly lighter
+   navy card surfaces, soft-white and muted-grey typography,
+   brighter indigo for actions so contrast holds, and subtle
+   borders that separate cards without glowing.
+   ========================================================= */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Brand stays indigo, lifted for contrast on dark */
+  --nm-navy-900: #eef1fb;
+  --nm-navy-800: #dbe0f2;
+  --nm-indigo-700: #a5b4fc;
+  --nm-indigo-600: #818cf8;
+  --nm-indigo-500: #6366f1;
+  --nm-indigo-400: #8b7cf6;
+  --nm-indigo-50: #232a4d;
+
+  /* Surfaces: midnight navy page, lighter navy cards */
+  --nm-bg: #0c1022;
+  --nm-bg-wash: #0a0d1c;
+  --nm-surface: #151b30;
+  --nm-surface-2: #1b2240;
+  --nm-surface-3: #222a4e;
+
+  /* Text: soft white / muted grey */
+  --nm-heading: #eef1fb;
+  --nm-text: #ccd3e8;
+  --nm-text-soft: #9aa3be;
+  --nm-text-mute: #79819c;
+
+  /* Lines: distinguishable, never bright */
+  --nm-border: #273054;
+  --nm-border-soft: #1e2647;
+
+  /* Primary actions */
+  --nm-primary: #7c85f7;
+  --nm-primary-deep: #6366f1;
+  --nm-primary-grad: linear-gradient(135deg, #6366f1 0%, #8b7cf6 100%);
+  --nm-primary-soft: #232a4d;
+  --nm-primary-ring: rgba(129, 140, 248, 0.45);
+  --nm-on-primary: #ffffff;
+
+  /* Status: accessible hues on dark washes */
+  --nm-danger: #fda29b;
+  --nm-danger-bg: #2a1618;
+  --nm-danger-border: #5f2426;
+  --nm-success: #6ce9a6;
+  --nm-success-bg: #0f241c;
+  --nm-success-border: #1d4d36;
+  --nm-warn: #fec84b;
+  --nm-warn-bg: #2a1f0d;
+  --nm-warn-border: #5c4415;
+  --nm-info: #84caff;
+  --nm-info-bg: #101f33;
+  --nm-info-border: #1d3d5f;
+
+  /* Elevation: deeper, cooler shadows on dark */
+  --nm-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --nm-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  --nm-shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.5);
+
+  --nm-focus-ring: 0 0 0 3px rgba(129, 140, 248, 0.45);
+
+  /* Branded bands stay deep, slightly deeper for dark */
+  --nm-hero-grad: linear-gradient(
+    135deg,
+    #10132b 0%,
+    #1d1b4d 45%,
+    #2f2b7d 100%
+  );
+  --nm-hero-ink: #f2f4ff;
+  --nm-hero-ink-soft: #b9c0dd;
+  --nm-hero-accent: #a5b4fc;
+  --nm-hero-chip: rgba(255, 255, 255, 0.07);
+  --nm-hero-chip-border: rgba(255, 255, 255, 0.18);
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--nm-font-sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--nm-text);
+  background: var(--nm-bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--nm-heading);
+}
+
+/* Opt-in serif display headings (hero titles, page headlines).
+   Kept off body copy and UI chrome on purpose: the serif is the
+   legal-identity voice, not the reading voice. */
+.nm-serif,
+h1.nm-serif,
+h2.nm-serif {
+  font-family: var(--nm-font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* One visible focus ring for keyboard users on every control.
+   Specificity beats the legacy `outline: none` in component
+   sheets, so keyboard navigation is always visible. */
+:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.55);
+  outline-offset: 2px;
+}
+
+[data-theme="dark"] :focus-visible {
+  outline-color: rgba(129, 140, 248, 0.65);
+}
+
+/* Users who ask for less motion get none: every animation and
+   transition in the app collapses to an instant state change.
+   Content is never hidden behind motion, so nothing is lost. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: -0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+#root {
+  min-height: 100vh;
+}

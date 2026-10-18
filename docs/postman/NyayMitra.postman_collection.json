@@ -1,0 +1,883 @@
+{
+  "info": {
+    "_postman_id": "nyaymitra-api-collection",
+    "name": "NyayMitra API",
+    "description": "NyayMitra backend API collection — working requests for every endpoint the team tests against.\n\nBASE URL: {{baseUrl}} (http://localhost:8000)\n\nAUTHENTICATION\n- One login endpoint for every role: POST /api/auth/login.\n- Register: POST /api/auth/register creates a USER; POST /api/auth/register/lawyer creates a LAWYER (lands PENDING verification — only an admin can approve).\n- The register and login requests below save the returned token to the collection variable `token` automatically. Run one of them before any protected request. Run the Admin Login before the /api/admin/* requests.\n- Protected routes: Authorization: Bearer {{token}}.\n- Logout (POST /api/auth/logout) revokes the current token.\n\nLAWYER VERIFICATION (ADMIN only)\n- verification_status vocabulary is exactly: PENDING, APPROVED, REJECTED.\n- GET /api/admin/lawyers — list registrations (?status=PENDING is the approvals queue, page/limit paging).\n- GET /api/admin/lawyers/{lawyer_id} — one registration in full.\n- PATCH /api/admin/lawyers/{lawyer_id} — body {\"verification_status\": \"APPROVED\" | \"REJECTED\" | \"PENDING\"}.\n- A lawyer (or any non-ADMIN token) receives 403 on every /api/admin/* route — self-approval is impossible.\n\nVERIFICATION DOCUMENTS (lawyer registration, part 2)\n- POST /api/auth/lawyer/verification-document - multipart/form-data (field 'file'), LAWYER token, PDF/JPG/PNG, max 10 MB; re-upload replaces the previous copy; 409 once APPROVED.\n- GET /api/auth/lawyer/verification-document - the caller's own file bytes (attachment).\n- GET /api/admin/lawyers/{lawyer_id}/document - ADMIN-only file bytes (attachment); 404 when nothing was uploaded.\n- No static file route exists - uploads live outside any web root, one server-generated file per lawyer.\n\nDEMO ACCOUNTS (seeded for integration testing only — see README \"Demo credentials\")\n- USER:   asha@example.com / user123\n- LAWYER: rohan@example.com / lawyer123 (APPROVED)\n- ADMIN:  admin@nyaymitra.in / admin123\n\nERRORS: validation 400/422, bad credentials 401 (generic), wrong role 403, duplicates 409, unknown id 404 — always {\"detail\": \"...\"}.\n\nCHAT (Phase 3)\n- Folder 'Chat (User ↔ Lawyer)': directory of APPROVED lawyers, get-or-create conversations from either side, history and sending — all bearer-authenticated via the same {{token}} as the other folders.\n- Set {{token}} from any Login response, then follow the folder order (user side, then lawyer side).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "description": "One system for every role. The register and login requests store the access token in `token` automatically.",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"full_name\": \"Test Citizen\",\n  \"email\": \"test.citizen@example.com\",\n  \"password\": \"change-me-123\",\n  \"password_confirmation\": \"change-me-123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            },
+            "description": "201 → signed in as role USER. The server assigns the role; sending \"role\" in the body is rejected with 422. Passwords are stored only as PBKDF2 hashes."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Registered and signed in\", () => pm.response.code === 201);",
+                  "const body = pm.response.json();",
+                  "if (body.access_token) {",
+                  "    pm.collectionVariables.set(\"token\", body.access_token);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Register Lawyer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"full_name\": \"Test Advocate\",\n  \"email\": \"test.advocate@example.com\",\n  \"password\": \"change-me-123\",\n  \"password_confirmation\": \"change-me-123\",\n  \"license_id\": \"ENR/TEST/0001\",\n  \"practice_areas\": [\n    \"Criminal Law\",\n    \"Family Law\"\n  ],\n  \"bar_council\": \"Bar Council of Maharashtra\",\n  \"years_of_experience\": 7,\n  \"professional_phone_number\": \"+91 98765 43210\",\n  \"professional_bio\": \"High Court advocate, 7 years of practice.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/register/lawyer",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register",
+                "lawyer"
+              ]
+            },
+            "description": "201 -> signed in as role LAWYER with verification_status = PENDING. license_id is required and unique; practice_areas is a string array (1-10 items, de-duplicated server-side). Optional profile fields: bar_council (<=200 chars), years_of_experience (0-70), professional_phone_number (5-50 chars of digits/space/+/()-), professional_bio (<=1000 chars) -> 400 when out of bounds. The client cannot send verification_status, role or lawyer_id - those fields are rejected with 422 (self-approval at the door is impossible). PART 1 of the submission: follow with 'Upload Verification Document' using the token saved below."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Lawyer registered, PENDING\", () => pm.response.code === 201);",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Lands PENDING\", () => pm.expect(body.user.verification_status).to.eql(\"PENDING\"));",
+                  "if (body.access_token) {",
+                  "    pm.collectionVariables.set(\"token\", body.access_token);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Upload Verification Document",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": null,
+                  "description": "PDF, JPG or PNG, max 10 MB (magic bytes, extension and content-type must agree)."
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/lawyer/verification-document",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "lawyer",
+                "verification-document"
+              ]
+            },
+            "description": "PART 2 of lawyer registration: attach the licence/registration document (multipart/form-data, field name 'file'). Needs the LAWYER token saved by Register Lawyer. 201 -> document metadata {filename, mime_type, size_bytes, sha256, uploaded_at}. Re-uploading REPLACES the previous copy (one lawyer, one file); allowed while PENDING or REJECTED, 409 once APPROVED. 400 for wrong type/size/empty file, 401 signed out, 403 for non-LAWYER tokens. The file is never served statically - bytes leave the server only through this lawyer's own GET /api/auth/lawyer/verification-document or the ADMIN-only GET /api/admin/lawyers/{id}/document."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Document stored (201)', () => pm.response.code === 201);",
+                  "const doc = pm.response.json();",
+                  "pm.test('PDF/JPEG/PNG only', () => pm.expect(doc.mime_type).to.match(/^(application\\/pdf|image\\/jpeg|image\\/png)$/));",
+                  "pm.test('Has sha256 + size', () => { pm.expect(doc.sha256).to.have.length(64); pm.expect(doc.size_bytes).to.be.above(0); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login (demo USER)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"asha@example.com\",\n  \"password\": \"user123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "description": "The single login endpoint for USER, LAWYER and ADMIN alike. Unknown email and wrong password answer with the same 401 (\"Invalid email or password.\"). Pre-filled with the seeded demo USER; the password is a documented demo credential, not a real one."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Signed in\", () => pm.response.code === 200);",
+                  "const body = pm.response.json();",
+                  "if (body.access_token) {",
+                  "    pm.collectionVariables.set(\"token\", body.access_token);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login (demo LAWYER)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"rohan@example.com\",\n  \"password\": \"lawyer123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "description": "Seeded demo LAWYER (verification_status = APPROVED). Use /api/auth/me with this token to see verification_status and lawyer_id."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Signed in as LAWYER\", () => pm.response.code === 200);",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Role is LAWYER\", () => pm.expect(body.user.role).to.eql(\"LAWYER\"));",
+                  "if (body.access_token) {",
+                  "    pm.collectionVariables.set(\"token\", body.access_token);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login (demo ADMIN)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@nyaymitra.in\",\n  \"password\": \"admin123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            },
+            "description": "Seeded demo ADMIN — integration-testing only; there is no self-registration path for ADMIN. Run this before any /api/admin/* request: it overwrites `token` with the admin session."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Signed in as ADMIN\", () => pm.response.code === 200);",
+                  "const body = pm.response.json();",
+                  "pm.test(\"Role is ADMIN\", () => pm.expect(body.user.role).to.eql(\"ADMIN\"));",
+                  "if (body.access_token) {",
+                  "    pm.collectionVariables.set(\"token\", body.access_token);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Current User (profile)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "me"
+              ]
+            },
+            "description": "The reference protected route. 401 without a valid token. Returns user_id, full_name, email, role, is_demo, lawyer_id and — for LAWYER accounts — verification_status (PENDING/APPROVED/REJECTED). Never a password hash."
+          }
+        },
+        {
+          "name": "Lawyer Profile (own registration)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/lawyer/profile",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "lawyer",
+                "profile"
+              ]
+            },
+            "description": "The signed-in advocate's own registration: lawyer_id, license_id, practice_areas (array), verification_status, verified_at, optional profile fields (bar_council, years_of_experience, professional_phone_number, professional_bio) and document: null until a licence file is uploaded, then {filename, mime_type, size_bytes, sha256, uploaded_at} - metadata only, never the bytes (fetch those via GET /api/auth/lawyer/verification-document). Available to PENDING, APPROVED and REJECTED lawyers alike (this is the status screen). 401 signed out, 403 for non-LAWYER roles."
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/logout",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "logout"
+              ]
+            },
+            "description": "Revokes the presented token. 200 {\"message\": \"Signed out.\"} — afterwards /me answers 401."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin — Lawyer Verification",
+      "description": "ADMIN-only. Run \"Login (demo ADMIN)\" first so `token` holds the admin session — every route below answers 403 to any other role, including the lawyer being ruled on (self-approval is impossible).",
+      "item": [
+        {
+          "name": "List All Registrations",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/lawyers?page=1&limit=20",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "lawyers"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            },
+            "description": "Every lawyer registration, newest first. Envelope: {count, total_count, page, limit, total_pages, lawyers[]} — the same shape GET /api/lawyers returns, so the Admin Dashboard renders both with one type."
+          }
+        },
+        {
+          "name": "List Pending Registrations (queue)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/lawyers?status=PENDING",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "lawyers"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "PENDING"
+                }
+              ]
+            },
+            "description": "The approvals queue. status accepts exactly PENDING, APPROVED or REJECTED — anything else is 422."
+          }
+        },
+        {
+          "name": "Get One Registration",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/lawyers/LAWYER_0001",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "lawyers",
+                "LAWYER_0001"
+              ]
+            },
+            "description": "One registration in full: name, email, license_id, practice_areas, verification_status, verified_by/verified_at, created_at, optional profile fields (bar_council, years_of_experience, professional_phone_number, professional_bio) and document metadata ({filename, mime_type, size_bytes, sha256, uploaded_at} or null when nothing was uploaded) so the dashboard can flag applications without proof. 404 'Lawyer not found' for an unknown id."
+          }
+        },
+        {
+          "name": "Get Verification Document (admin)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/lawyers/LAWYER_0001/document",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "lawyers",
+                "LAWYER_0001",
+                "document"
+              ]
+            },
+            "description": "ADMIN only: the uploaded licence/registration file itself (file bytes, real content-type, Content-Disposition: attachment, X-Content-Type-Options: nosniff). Run the Admin Login first so {{token}} is an ADMIN token. 401 signed out, 403 for every non-ADMIN token (including the lawyer's own), 404 'Document not found' when nothing was uploaded. The uploads directory is never served statically - this endpoint and the lawyer's own GET /api/auth/lawyer/verification-document are the only two ways bytes leave the server."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Document bytes (200) or honest 404', () => pm.expect([200, 404]).to.include(pm.response.code));",
+                  "if (pm.response.code === 200) {",
+                  "    pm.test('Served as an attachment', () => pm.expect(pm.response.headers.get('Content-Disposition') || '').to.contain('attachment'));",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Approve Lawyer",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"verification_status\": \"APPROVED\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/lawyers/LAWYER_0001",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "lawyers",
+                "LAWYER_0001"
+              ]
+            },
+            "description": "Records verified_by (the admin's user id) and verified_at, and the lawyer's own /me reads APPROVED immediately — no re-login. Sending any other field (e.g. verified_by) is 422."
+          }
+        },
+        {
+          "name": "Reject Lawyer",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"verification_status\": \"REJECTED\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/lawyers/LAWYER_0001",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "lawyers",
+                "LAWYER_0001"
+              ]
+            },
+            "description": "The lawyer can still log in and read their own status; lawyer-only features answer 403 \"Your lawyer registration has been rejected.\""
+          }
+        },
+        {
+          "name": "Reset to Pending",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"verification_status\": \"PENDING\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/admin/lawyers/LAWYER_0001",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "admin",
+                "lawyers",
+                "LAWYER_0001"
+              ]
+            },
+            "description": "Clears verified_by and verified_at — \"nobody has ruled\" must read that way to every screen."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cases",
+      "item": [
+        {
+          "name": "Get Cases",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cases",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cases"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Search Case by CNR",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/cases/cnr/MHPU210000042026",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "cases",
+                "cnr",
+                "MHPU210000042026"
+              ]
+            },
+            "description": "CNR lookup against the development dataset. 200 → the case record; unknown/malformed CNR → the service's own refusal message."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Chat (User ↔ Lawyer)",
+      "description": "Phase 3 messaging over plain HTTP — no WebSockets. Identity always comes from the session token: request bodies never carry the sender or the thread's owner (extra fields are 422). Only APPROVED lawyers are listed or reachable; conversations are visible to their two participants only (anyone else gets 404). Demo flow: login as the demo USER → directory → start conversation → send; then login as the demo LAWYER (already APPROVED) → list → reply.",
+      "item": [
+        {
+          "name": "Verified Lawyer Directory",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/chat/lawyers",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "chat",
+                "lawyers"
+              ]
+            },
+            "description": "200 {count, lawyers[]} — only verification_status=APPROVED lawyers, each with name, practice areas, experience, bio and bar council (never email, licence id or phone). PENDING/REJECTED never appear. Signed out → 401; any signed-in role may browse."
+          }
+        },
+        {
+          "name": "List Conversations (USER)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/chat/conversations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "chat",
+                "conversations"
+              ]
+            },
+            "description": "200 {count, conversations[]} — the signed-in citizen's threads only, newest activity first, each with both participants, optional case_cnr and the full message history. LAWYER or ADMIN session → 403; signed out → 401. There is no parameter that can widen the filter."
+          }
+        },
+        {
+          "name": "Start or Reuse Conversation (USER)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/chat/conversations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "chat",
+                "conversations"
+              ]
+            },
+            "description": "201 created / 200 reused — one thread per (citizen, lawyer) pair, never a duplicate. The lawyer must exist AND be APPROVED: unknown and unavailable ids answer identically (404 'Lawyer not found or not available for chat.') so registrations cannot be probed. case_cnr is optional (4 letters + 12 digits, stored upper-cased; malformed → 400). A user_id in the payload → 422: the owner is always the session.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lawyer_id\": \"LAWYER_0001\",\n  \"case_cnr\": \"MHPU210000042026\"\n}"
+            }
+          }
+        },
+        {
+          "name": "List Conversations (LAWYER)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/chat/lawyer/conversations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "chat",
+                "lawyer",
+                "conversations"
+              ]
+            },
+            "description": "200 {count, conversations[]} — threads involving the signed-in advocate only (same shape as the user list, same newest-first order). PENDING/REJECTED lawyer token → 403 with that lawyer's own status message; other roles → 403; signed out → 401."
+          }
+        },
+        {
+          "name": "Start or Reuse Conversation (LAWYER)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/chat/lawyer/conversations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "chat",
+                "lawyer",
+                "conversations"
+              ]
+            },
+            "description": "201 created / 200 reused — a verified lawyer opens (or reuses) the thread with a client, e.g. the 'Message client' button on a case. user_id must belong to a real USER account, else 404 'Account not found.' A lawyer_id in the payload → 422: the thread is always bound to the session's own lawyer. Pending/rejected → 403.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": 1,\n  \"case_cnr\": null\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Conversation",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/chat/conversations/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "chat",
+                "conversations",
+                "1"
+              ]
+            },
+            "description": "200 ConversationOut with full history — participants only: the citizen on the thread or a verified lawyer on it. Anybody else (including a valid-but-different user/lawyer) → 404, which leaks nothing about which ids exist; unknown id → 404; non-numeric id → 422 (never a 500); ADMIN → 403; signed out → 401."
+          }
+        },
+        {
+          "name": "List Messages",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/chat/conversations/1/messages",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "chat",
+                "conversations",
+                "1",
+                "messages"
+              ]
+            },
+            "description": "200 {count, messages[]} in send order (oldest first). sender_role ('USER'/'LAWYER') is derived from which side of the thread the sender sits on — it is not stored, so it cannot be spoofed. Same access rules as Get Conversation."
+          }
+        },
+        {
+          "name": "Send Message",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/chat/conversations/1/messages",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "chat",
+                "conversations",
+                "1",
+                "messages"
+              ]
+            },
+            "description": "201 ChatMessageOut — sender_id is taken from the session, never from the payload (a sender_id field in the body → 422). Blank message → 400; over 4000 characters → 400; non-participant → 404; signed out → 401. Messages persist server-side across refresh and re-login.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\"message\": \"Namaste, I need help with my case.\"}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

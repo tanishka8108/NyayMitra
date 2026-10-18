@@ -1,0 +1,96 @@
+# Case data - never commit raw / processed / scraped datasets
+# data/ stays ignored. The only exceptions are the three resource files the
+# intent + incident pipeline needs at runtime, un-ignored by exact path.
+data/*
+!data/raw/
+data/raw/*
+!data/raw/incident_examples.json
+!data/raw/incident_categories.json
+!data/raw/incident_facts.json
+data/processed/
+data/disposedata/
+
+# Any CSV (case data, extracted tables, source dumps)
+*.csv
+
+# Data dumps
+nyayMitra_data_v1.json
+
+# Python
+__pycache__/
+*.pyc
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+# Both services keep their environment next to the code; they are
+# tens of gigabytes and never belong in a commit.
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Logs (NLP audit log, uvicorn, etc.)
+*.log
+access_audit.log
+
+# Environment files
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Node / frontend (if re-added later)
+node_modules/
+dist/
+
+# Editors / OS
+# OS / editor
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+# Windows' alternate-data-stream file that rides along with a download
+*:Zone.Identifier
+
+# SQLite auth/chat database — local data, never committed
+# (created by database/sqlite_db.py; seeded by
+# database/seed_demo_accounts.py)
+*.db
+*.db-wal
+*.db-shm
+
+# Lawyer verification document uploads — local files, never
+# committed (written by auth/documents.py; readable only through
+# the authenticated own-document / ADMIN document endpoints)
+/NyayMitra-feature-lawyer-api/data/uploads/
+
+# Local court datasets and downloaded archives — do not commit
+/dev_data/
+/*.zip
+
+# Local backups
+*.bak
+*.backup
+*.backup2
+*.before_*
+
+# Local backups and secrets
+*.bak
+*.backup
+*.backup2
+*.before_*
+.env
+.venv/
+node_modules/
+dist/
+__pycache__/
+
+# Local backups and secrets
+*.bak
+*.backup
+*.backup2
+*.before_*
+.env
+.venv/
+node_modules/
+dist/
+__pycache__/

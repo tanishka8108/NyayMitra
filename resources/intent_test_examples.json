@@ -1,0 +1,524 @@
+[
+  {
+    "_meta": {
+      "purpose": "Held-out evaluation set for the 3-way intent classifier (INCIDENT | CASE_QUESTION | FOLLOW_UP).",
+      "created": "2026-10-04",
+      "not_used_for_training": "None of these 30 questions appear in resources/intent_examples.json (the training file). They were written after the training set was frozen and were never embedded into the classifier's training matrix.",
+      "synthetic_warning": "All 30 examples are hand-written, synthetic test data and have NOT been reviewed by the team member who owns the incident data. The 10 CASE_QUESTION and 10 FOLLOW_UP items are fully synthetic, so any accuracy reported on those two classes is SYNTHETIC AND INDICATIVE ONLY - it is not real-world performance.",
+      "notes": "The 10 INCIDENT items use new wording that is not copied from the team file data/raw/incident_examples.json, but they are still hand-written synthetic text; treat their score the same way.",
+      "counts": {
+        "INCIDENT": 22,
+        "CASE_QUESTION": 19,
+        "FOLLOW_UP": 19
+      },
+      "schema": [
+        "example_id",
+        "category_id",
+        "example",
+        "is_synthetic"
+      ],
+      "counts_by_language": {
+        "en": {
+          "INCIDENT": 10,
+          "CASE_QUESTION": 10,
+          "FOLLOW_UP": 10
+        },
+        "hi": {
+          "INCIDENT": 4,
+          "CASE_QUESTION": 3,
+          "FOLLOW_UP": 3
+        },
+        "mr": {
+          "INCIDENT": 4,
+          "CASE_QUESTION": 3,
+          "FOLLOW_UP": 3
+        },
+        "hinglish": {
+          "INCIDENT": 4,
+          "CASE_QUESTION": 3,
+          "FOLLOW_UP": 3
+        }
+      },
+      "languages": {
+        "en": "30 English questions (written 2026-10-04, hand-written, unreviewed)",
+        "hi": "10 Hindi (Devanagari) questions - synthetic, unreviewed by a native speaker",
+        "mr": "10 Marathi (Devanagari) questions - synthetic, unreviewed by a native speaker",
+        "hinglish": "10 Hinglish (Roman script) questions - synthetic, unreviewed by a native speaker"
+      },
+      "new_language_warning": "The 30 language rows added for the multilingual encoder are SYNTHETIC and have NOT been reviewed by a native speaker of Hindi, Marathi or Hinglish. Accuracy on hi / mr / hinglish is indicative only and is not real-world performance. They are evaluation-only: none of them is used for training.",
+      "evaluation_only_note": "resources/intent_test_examples.json is never used for training; training data stays in resources/intent_examples.json."
+    }
+  },
+  {
+    "example_id": "TEST_INC_01",
+    "category_id": "INCIDENT",
+    "example": "Rs 18,400 vanished from my wallet app the moment I scanned a QR code a stranger sent me.",
+    "is_synthetic": true,
+    "language": "en",
+    "incident_category_id": "INC001"
+  },
+  {
+    "example_id": "TEST_INC_02",
+    "category_id": "INCIDENT",
+    "example": "A man posing as a bank officer had me read out the code he texted me, and then cash left my account.",
+    "is_synthetic": true,
+    "language": "en",
+    "incident_category_id": "INC002"
+  },
+  {
+    "example_id": "TEST_INC_03",
+    "category_id": "INCIDENT",
+    "example": "Somebody has taken over my Instagram account, changed the email on it and is posting from it.",
+    "is_synthetic": true,
+    "language": "en",
+    "incident_category_id": "INC003"
+  },
+  {
+    "example_id": "TEST_INC_04",
+    "category_id": "INCIDENT",
+    "example": "A man I blocked keeps creating new accounts to follow me and send me messages every day.",
+    "is_synthetic": true,
+    "language": "en",
+    "incident_category_id": "INC004"
+  },
+  {
+    "example_id": "TEST_INC_05",
+    "category_id": "INCIDENT",
+    "example": "I paid for a phone on a shopping app, the order still shows packed and now the seller's shop has disappeared.",
+    "is_synthetic": true,
+    "language": "en",
+    "incident_category_id": "INC006"
+  },
+  {
+    "example_id": "TEST_INC_06",
+    "category_id": "INCIDENT",
+    "example": "The air conditioner I bought stopped cooling within a week and the company will not replace or refund it.",
+    "is_synthetic": true,
+    "language": "en",
+    "incident_category_id": "INC007"
+  },
+  {
+    "example_id": "TEST_INC_07",
+    "category_id": "INCIDENT",
+    "example": "My husband's family keeps demanding extra dowry and threatening to harm me if we do not pay.",
+    "is_synthetic": true,
+    "language": "en",
+    "incident_category_id": "INC008"
+  },
+  {
+    "example_id": "TEST_INC_08",
+    "category_id": "INCIDENT",
+    "example": "My supervisor at work keeps making remarks about my body and finds excuses to touch me.",
+    "is_synthetic": true,
+    "language": "en",
+    "incident_category_id": "INC009"
+  },
+  {
+    "example_id": "TEST_INC_09",
+    "category_id": "INCIDENT",
+    "example": "Two men on a bike snatched my gold chain as I was walking back from the market this evening.",
+    "is_synthetic": true,
+    "language": "en",
+    "incident_category_id": "INC013"
+  },
+  {
+    "example_id": "TEST_INC_10",
+    "category_id": "INCIDENT",
+    "example": "My landlord has cut the whole security deposit from my money and will not say what it was for.",
+    "is_synthetic": true,
+    "language": "en",
+    "incident_category_id": "INC016"
+  },
+  {
+    "example_id": "TEST_CQ_01",
+    "category_id": "CASE_QUESTION",
+    "example": "How do I find out the next date my case is listed for hearing?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_CQ_02",
+    "category_id": "CASE_QUESTION",
+    "example": "Which papers should I bring with me when I appear before the judge?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_CQ_03",
+    "category_id": "CASE_QUESTION",
+    "example": "The court has kept my matter for orders, what does that mean for my case?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_CQ_04",
+    "category_id": "CASE_QUESTION",
+    "example": "My case is still sitting at the filing stage after four months, is that usual?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_CQ_05",
+    "category_id": "CASE_QUESTION",
+    "example": "What is the last date for filing an appeal against this order?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_CQ_06",
+    "category_id": "CASE_QUESTION",
+    "example": "Do I have to be present in court myself or can my advocate appear for me?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_CQ_07",
+    "category_id": "CASE_QUESTION",
+    "example": "Why has the court only now issued notice to the other side?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_CQ_08",
+    "category_id": "CASE_QUESTION",
+    "example": "What happens if the opposite party never files a written statement?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_CQ_09",
+    "category_id": "CASE_QUESTION",
+    "example": "Can my hearing be postponed if my lawyer is not available on that date?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_CQ_10",
+    "category_id": "CASE_QUESTION",
+    "example": "What is the procedure to get a certified copy of the judgment in my matter?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_FU_01",
+    "category_id": "FOLLOW_UP",
+    "example": "Yes, I have the bank statement right here.",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_FU_02",
+    "category_id": "FOLLOW_UP",
+    "example": "Where do I upload that?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_FU_03",
+    "category_id": "FOLLOW_UP",
+    "example": "What details do you need from me next?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_FU_04",
+    "category_id": "FOLLOW_UP",
+    "example": "That was two days ago, does it still matter?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_FU_05",
+    "category_id": "FOLLOW_UP",
+    "example": "Should I keep a copy of that for myself?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_FU_06",
+    "category_id": "FOLLOW_UP",
+    "example": "Is that everything you need?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_FU_07",
+    "category_id": "FOLLOW_UP",
+    "example": "How do I get hold of that document?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_FU_08",
+    "category_id": "FOLLOW_UP",
+    "example": "Okay, and after that what?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_FU_09",
+    "category_id": "FOLLOW_UP",
+    "example": "Do you need the amount as well?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "TEST_FU_10",
+    "category_id": "FOLLOW_UP",
+    "example": "Will that be enough proof on its own?",
+    "is_synthetic": true,
+    "language": "en"
+  },
+  {
+    "example_id": "HI_INC_01",
+    "category_id": "INCIDENT",
+    "example": "मेरे खाते से मेरी जानकारी के बिना 15000 रुपये UPI से कट गए.",
+    "is_synthetic": true,
+    "language": "hi",
+    "note": "synthetic, unreviewed by a native speaker",
+    "incident_category_id": "INC001"
+  },
+  {
+    "example_id": "HI_INC_02",
+    "category_id": "INCIDENT",
+    "example": "पड़ोसी ने बहस के दौरान मुझे धक्का देकर चोट पहुँचाई.",
+    "is_synthetic": true,
+    "language": "hi",
+    "note": "synthetic, unreviewed by a native speaker",
+    "incident_category_id": "INC012"
+  },
+  {
+    "example_id": "HI_INC_03",
+    "category_id": "INCIDENT",
+    "example": "बाजार से लौटते समय किसी ने मेरा मोबाइल छीन लिया.",
+    "is_synthetic": true,
+    "language": "hi",
+    "note": "synthetic, unreviewed by a native speaker",
+    "incident_category_id": "INC013"
+  },
+  {
+    "example_id": "HI_INC_04",
+    "category_id": "INCIDENT",
+    "example": "मेरे मालिक ने पिछले दो महीने की तनख्वाह अभी तक नहीं दी है.",
+    "is_synthetic": true,
+    "language": "hi",
+    "note": "synthetic, unreviewed by a native speaker",
+    "incident_category_id": "INC017"
+  },
+  {
+    "example_id": "HI_CQ_01",
+    "category_id": "CASE_QUESTION",
+    "example": "मेरे मामले की अगली सुनवाई कब होगी?",
+    "is_synthetic": true,
+    "language": "hi",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "HI_CQ_02",
+    "category_id": "CASE_QUESTION",
+    "example": "अदालत ने मुझे नोटिस भेजा है, इसका क्या मतलब है?",
+    "is_synthetic": true,
+    "language": "hi",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "HI_CQ_03",
+    "category_id": "CASE_QUESTION",
+    "example": "क्या मुझे अपने वकील के साथ अदालत में मौजूद रहना ज़रूरी है?",
+    "is_synthetic": true,
+    "language": "hi",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "HI_FU_01",
+    "category_id": "FOLLOW_UP",
+    "example": "क्या आपको स्क्रीनशॉट चाहिए?",
+    "is_synthetic": true,
+    "language": "hi",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "HI_FU_02",
+    "category_id": "FOLLOW_UP",
+    "example": "इसके बाद मुझे क्या करना होगा?",
+    "is_synthetic": true,
+    "language": "hi",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "HI_FU_03",
+    "category_id": "FOLLOW_UP",
+    "example": "वह रकम कितनी थी?",
+    "is_synthetic": true,
+    "language": "hi",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "MR_INC_01",
+    "category_id": "INCIDENT",
+    "example": "माझ्या बँक खात्यातून माझ्या माहितीशिवाय 12000 रुपये काढले गेले.",
+    "is_synthetic": true,
+    "language": "mr",
+    "note": "synthetic, unreviewed by a native speaker",
+    "incident_category_id": "INC001"
+  },
+  {
+    "example_id": "MR_INC_02",
+    "category_id": "INCIDENT",
+    "example": "माझा मालक भाड्याचे परतावे देत नाही आणि घर सोडून द्यायला सांगतोय.",
+    "is_synthetic": true,
+    "language": "mr",
+    "note": "synthetic, unreviewed by a native speaker",
+    "incident_category_id": "INC016"
+  },
+  {
+    "example_id": "MR_INC_03",
+    "category_id": "INCIDENT",
+    "example": "मी विक्रीतून घेतलेली वॉशिंग मशीन एका आठवड्यात बंद पडली आणि कंपनी बदलून देत नाही.",
+    "is_synthetic": true,
+    "language": "mr",
+    "note": "synthetic, unreviewed by a native speaker",
+    "incident_category_id": "INC007"
+  },
+  {
+    "example_id": "MR_INC_04",
+    "category_id": "INCIDENT",
+    "example": "एक माणूस रोज फोन करून मला धमक्या देतोय.",
+    "is_synthetic": true,
+    "language": "mr",
+    "note": "synthetic, unreviewed by a native speaker",
+    "incident_category_id": "INC011"
+  },
+  {
+    "example_id": "MR_CQ_01",
+    "category_id": "CASE_QUESTION",
+    "example": "माझ्या प्रकरणाची पुढील चौकशी कधी होईल?",
+    "is_synthetic": true,
+    "language": "mr",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "MR_CQ_02",
+    "category_id": "CASE_QUESTION",
+    "example": "न्यायालयाने दिलेला आदेश म्हणजे नक्की काय?",
+    "is_synthetic": true,
+    "language": "mr",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "MR_CQ_03",
+    "category_id": "CASE_QUESTION",
+    "example": "माझे वकील न्यायालयात उपस्थित नसेल तर चौकशी पुढे सरकू शकते का?",
+    "is_synthetic": true,
+    "language": "mr",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "MR_FU_01",
+    "category_id": "FOLLOW_UP",
+    "example": "तुम्हाला त्याचा स्क्रीनशॉट हवा आहे का?",
+    "is_synthetic": true,
+    "language": "mr",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "MR_FU_02",
+    "category_id": "FOLLOW_UP",
+    "example": "त्यानंतर मी काय करावे?",
+    "is_synthetic": true,
+    "language": "mr",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "MR_FU_03",
+    "category_id": "FOLLOW_UP",
+    "example": "ती रक्कम किती होती?",
+    "is_synthetic": true,
+    "language": "mr",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "HG_INC_01",
+    "category_id": "INCIDENT",
+    "example": "Mere account se bina meri permission 9000 rupaye UPI se kat gaye.",
+    "is_synthetic": true,
+    "language": "hinglish",
+    "note": "synthetic, unreviewed by a native speaker",
+    "incident_category_id": "INC001"
+  },
+  {
+    "example_id": "HG_INC_02",
+    "category_id": "INCIDENT",
+    "example": "Ek aadmi ne naukri dilane ka jhooth bolke mujhse 20000 rupaye le liye.",
+    "is_synthetic": true,
+    "language": "hinglish",
+    "note": "synthetic, unreviewed by a native speaker",
+    "incident_category_id": "INC014"
+  },
+  {
+    "example_id": "HG_INC_03",
+    "category_id": "INCIDENT",
+    "example": "Ek bike wale ne meri car ko side se thok diya aur wahan se bhaag gaya.",
+    "is_synthetic": true,
+    "language": "hinglish",
+    "note": "synthetic, unreviewed by a native speaker",
+    "incident_category_id": "INC021"
+  },
+  {
+    "example_id": "HG_INC_04",
+    "category_id": "INCIDENT",
+    "example": "Koi ladka Instagram par baar baar gandi gandi message bhej raha hai.",
+    "is_synthetic": true,
+    "language": "hinglish",
+    "note": "synthetic, unreviewed by a native speaker",
+    "incident_category_id": "INC004"
+  },
+  {
+    "example_id": "HG_CQ_01",
+    "category_id": "CASE_QUESTION",
+    "example": "Mere case ki agli sunwai kab hogi?",
+    "is_synthetic": true,
+    "language": "hinglish",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "HG_CQ_02",
+    "category_id": "CASE_QUESTION",
+    "example": "Court ne notice bheja hai, iska kya matlab hai?",
+    "is_synthetic": true,
+    "language": "hinglish",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "HG_CQ_03",
+    "category_id": "CASE_QUESTION",
+    "example": "Kya mujhe khud court mein hona zaroori hai?",
+    "is_synthetic": true,
+    "language": "hinglish",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "HG_FU_01",
+    "category_id": "FOLLOW_UP",
+    "example": "Screenshot chahiye kya?",
+    "is_synthetic": true,
+    "language": "hinglish",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "HG_FU_02",
+    "category_id": "FOLLOW_UP",
+    "example": "Uske baad kya karna hoga?",
+    "is_synthetic": true,
+    "language": "hinglish",
+    "note": "synthetic, unreviewed by a native speaker"
+  },
+  {
+    "example_id": "HG_FU_03",
+    "category_id": "FOLLOW_UP",
+    "example": "Wo amount kitni thi?",
+    "is_synthetic": true,
+    "language": "hinglish",
+    "note": "synthetic, unreviewed by a native speaker"
+  }
+]

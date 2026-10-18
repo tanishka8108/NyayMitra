@@ -1,0 +1,24 @@
+----- Test 1 (hi) -----
+EN: Matter adjourned sine die
+->  मामला अनिश्चित काल के लिए स्थगित
+translation_id: t_c3075e56
+
+----- Test 2 (hi) -----
+EN: The present writ petition is disposed of.
+->  वर्तमान रिट याचिका का निपटारा कर दिया गया है।
+translation_id: t_34cd5a76
+
+----- Test 3 (hi) -----
+EN: All the pending applications, if any, also stand disposed of.
+->  सभी लंबित आवेदन, यदि कोई हों, का भी निपटारा कर दिया जाता है।
+translation_id: t_c2c791c5
+
+----- Test 4 (mr) -----
+EN: We have heard learned counsel for the parties and perused the whole records of the case.
+->  आम्ही पक्षकारांचा विद्वान वकील ऐकला आहे आणि प्रकरणाच्या संपूर्ण नोंदींचा अभ्यास केला आहे.
+translation_id: t_74ddd322
+
+----- Test 5 (hi) -----
+EN: Challenge in the present petition is to notice dated 18.04.2024 issued under Section 148 of the Income Tax Act, 1961.
+->  वर्तमान याचिका में चुनौती आयकर अधिनियम, 1961 की धारा 148 के तहत जारी दिनांक 18.04.2024 को नोटिस करना है।
+translation_id: t_4c699a77

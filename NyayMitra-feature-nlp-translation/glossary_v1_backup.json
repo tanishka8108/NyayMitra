@@ -1,0 +1,41 @@
+{
+  "glossary_v1": [
+    {"term_id": "g001", "formal_term": "sine die", "plain_explanation_en": "Postponed indefinitely, with no new date fixed yet.", "category": "Adjournment / Postponement"},
+    {"term_id": "g002", "formal_term": "adjourned", "plain_explanation_en": "The hearing has been postponed to a later date.", "category": "Adjournment / Postponement"},
+    {"term_id": "g003", "formal_term": "part-heard", "plain_explanation_en": "The court has started hearing the case but hasn't finished; it will continue later, usually with the same judge.", "category": "Hearing / Listing"},
+    {"term_id": "g004", "formal_term": "listed for arguments", "plain_explanation_en": "Scheduled for lawyers to present their case to the judge.", "category": "Hearing / Listing"},
+    {"term_id": "g005", "formal_term": "listed under miscellaneous", "plain_explanation_en": "Placed in a general category for minor or procedural matters, not necessarily the main case hearing.", "category": "Hearing / Listing"},
+    {"term_id": "g006", "formal_term": "disposed of", "plain_explanation_en": "The case has been concluded by the court — this does not automatically mean you lost.", "category": "Orders / Judgments"},
+    {"term_id": "g007", "formal_term": "dismissed for default", "plain_explanation_en": "The case was thrown out because a required person did not show up in court.", "category": "Orders / Judgments"},
+    {"term_id": "g008", "formal_term": "ex parte", "plain_explanation_en": "A decision made with only one side present, because the other side did not appear.", "category": "Orders / Judgments"},
+    {"term_id": "g009", "formal_term": "interim order", "plain_explanation_en": "A temporary order that applies until the court makes its final decision.", "category": "Orders / Judgments"},
+    {"term_id": "g010", "formal_term": "stay", "plain_explanation_en": "A court order that pauses or halts an action from happening.", "category": "Orders / Judgments"},
+    {"term_id": "g011", "formal_term": "relief", "plain_explanation_en": "The specific remedy or outcome a party is asking the court to grant.", "category": "Orders / Judgments"},
+    {"term_id": "g012", "formal_term": "notice issued", "plain_explanation_en": "The court has formally informed the other party and asked them to respond.", "category": "Notice / Service"},
+    {"term_id": "g013", "formal_term": "returned unserved", "plain_explanation_en": "The court's attempt to officially notify someone failed — they could not be reached.", "category": "Notice / Service"},
+    {"term_id": "g014", "formal_term": "summons", "plain_explanation_en": "An official document ordering someone to appear in court.", "category": "Notice / Service"},
+    {"term_id": "g015", "formal_term": "transferred to another bench", "plain_explanation_en": "Moved to a different judge or courtroom, usually for administrative reasons.", "category": "Transfer / Bench"},
+    {"term_id": "g016", "formal_term": "want of jurisdiction", "plain_explanation_en": "The court does not have the legal authority to hear this particular case.", "category": "Transfer / Bench"},
+    {"term_id": "g017", "formal_term": "condonation of delay", "plain_explanation_en": "A request asking the court to excuse a missed deadline.", "category": "Filing / Procedural"},
+    {"term_id": "g018", "formal_term": "vakalatnama", "plain_explanation_en": "A formal document authorizing a lawyer to represent someone in court.", "category": "Filing / Procedural"},
+    {"term_id": "g019", "formal_term": "written statement", "plain_explanation_en": "The formal written response a party files to answer the claims made against them.", "category": "Filing / Procedural"},
+    {"term_id": "g020", "formal_term": "rejoinder", "plain_explanation_en": "A written reply responding to the other party's written statement.", "category": "Filing / Procedural"},
+    {"term_id": "g021", "formal_term": "remanded", "plain_explanation_en": "Sent back to a lower court for the case to be reconsidered.", "category": "Filing / Procedural"},
+    {"term_id": "g022", "formal_term": "appeal admitted", "plain_explanation_en": "A higher court has agreed to formally review the case again.", "category": "Appeal / Review"},
+    {"term_id": "g023", "formal_term": "revision petition", "plain_explanation_en": "A request asking a higher court to review and correct an error in a lower court's decision.", "category": "Appeal / Review"},
+    {"term_id": "g024", "formal_term": "not maintainable", "plain_explanation_en": "The court has ruled that this case or appeal cannot legally proceed as filed.", "category": "Appeal / Review"},
+    {"term_id": "g025", "formal_term": "anticipatory bail", "plain_explanation_en": "Advance protection from arrest, requested before an arrest actually happens.", "category": "Bail / Custody"},
+    {"term_id": "g026", "formal_term": "custody remand", "plain_explanation_en": "A court order keeping a person in custody for a specified period during investigation or trial.", "category": "Bail / Custody"},
+    {"term_id": "g027", "formal_term": "execution petition", "plain_explanation_en": "A request to formally enforce a court's earlier decision (e.g., recovering money owed).", "category": "Execution / Compliance"},
+    {"term_id": "g028", "formal_term": "compliance report", "plain_explanation_en": "A document proving that an earlier court order has actually been followed.", "category": "Execution / Compliance"}
+  ],
+  "notes": {
+    "status": "v1 - English only",
+    "source": "Derived from the 50-phrase eCourts/NJDG terminology test (Week 1, Tuesday)",
+    "next_steps": [
+      "Add Hindi (hin_Deva) and Marathi (mar_Deva) plain-language explanations for each term",
+      "Wire into translate_service.py so the /api/translate response can include a matched glossary explanation when the source text contains a known term",
+      "Expand term list as more real case-status text becomes available from Data Engineering (Week 3)"
+    ]
+  }
+}

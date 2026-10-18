@@ -1,0 +1,1061 @@
+/* =========================================================
+   MY CASES — ONE MATTER, IN FULL (CaseDetail)
+
+   Sits on the same page canvas as the list it came from, so
+   the transition from list to matter reads as a change of
+   depth rather than a change of application.
+   ========================================================= */
+
+.matter-detail {
+  position: relative;
+  z-index: 5;
+
+  max-width: 1120px;
+  margin: 40px auto 0;
+  padding-bottom: 80px;
+}
+
+/* ---------- back ---------- */
+
+.matter-back {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 18px;
+  padding: 10px 18px;
+
+  background: var(--nm-surface);
+  border: 1px solid var(--nm-border);
+  border-radius: 999px;
+
+  color: var(--nm-primary);
+  font-size: 13.5px;
+  font-weight: 650;
+  font-family: inherit;
+
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(25, 30, 60, 0.08);
+  transition: background 0.15s, transform 0.15s;
+}
+
+.matter-back:hover {
+  background: var(--nm-primary-soft);
+  transform: translateX(-2px);
+}
+
+/* ---------- header ---------- */
+
+.matter-head {
+  background: var(--nm-surface);
+  border: 1px solid var(--nm-border);
+  border-radius: 22px;
+  padding: 26px 28px;
+
+  box-shadow: 0 18px 44px rgba(25, 30, 60, 0.09);
+}
+
+.matter-head-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.matter-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--nm-text-mute);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+}
+
+.matter-head h2 {
+  margin: 0;
+  color: var(--nm-heading);
+  font-family: var(--nm-font-serif);
+  font-weight: 600;
+  font-size: 27px;
+  letter-spacing: 0.01em;
+}
+
+.matter-type {
+  margin: 7px 0 0;
+  color: var(--nm-text-mute);
+  font-size: 13.5px;
+}
+
+.matter-head-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.matter-stage {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 15px;
+
+  background: var(--nm-primary-soft);
+  border: 1px solid var(--nm-border);
+  border-radius: 999px;
+
+  color: var(--nm-primary-deep);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.matter-chat-btn {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 12px 20px;
+
+  background: var(--nm-primary-grad);
+  border: 0;
+  border-radius: 999px;
+
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 650;
+  font-family: inherit;
+
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(67, 56, 202, 0.3);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.matter-chat-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(67, 56, 202, 0.36);
+}
+
+/* ---------- three-column summary ---------- */
+
+.matter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.matter-card {
+  background: var(--nm-surface);
+  border: 1px solid var(--nm-border);
+  border-radius: 20px;
+  padding: 22px 24px;
+}
+
+.matter-card h3 {
+  margin: 0 0 16px;
+  color: var(--nm-text);
+  font-size: 15.5px;
+}
+
+.matter-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.matter-card-head h3 {
+  margin-bottom: 5px;
+}
+
+.matter-card-head p {
+  margin: 0;
+  color: var(--nm-text-mute);
+  font-size: 13px;
+}
+
+/* ---------- parties ---------- */
+
+.matter-parties {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.matter-party {
+  flex: 1;
+  min-width: 0;
+}
+
+.matter-party strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--nm-text);
+  font-size: 14px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.matter-party-arrow {
+  color: var(--nm-text-mute);
+  font-size: 18px;
+}
+
+/* ---------- field pairs ---------- */
+
+.matter-fields {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.matter-fields > div {
+  min-width: 0;
+}
+
+.matter-fields dt {
+  color: var(--nm-text-mute);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.matter-fields dd {
+  margin: 4px 0 0;
+  color: var(--nm-text);
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- schedule ---------- */
+
+.matter-hearing {
+  background: var(--nm-surface-2);
+  border: 1px solid var(--nm-border);
+  border-radius: 14px;
+  padding: 15px 16px;
+  margin-bottom: 16px;
+}
+
+.matter-hearing strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--nm-primary-deep);
+  font-size: 19px;
+}
+
+.matter-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.matter-stats > div {
+  background: var(--nm-surface-2);
+  border: 1px solid var(--nm-border-soft);
+  border-radius: 12px;
+  padding: 11px 8px;
+  text-align: center;
+}
+
+.matter-stats strong {
+  display: block;
+  color: var(--nm-primary-deep);
+  font-size: 18px;
+}
+
+.matter-stats span {
+  display: block;
+  margin-top: 3px;
+  color: var(--nm-text-mute);
+  font-size: 10.5px;
+  line-height: 1.3;
+}
+
+.matter-card + .matter-card,
+.matter-documents {
+  margin-top: 18px;
+}
+
+.matter-grid + .matter-card {
+  margin-top: 18px;
+}
+
+/* =========================================================
+   DOCUMENTS
+   ========================================================= */
+
+.matter-upload {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.matter-upload select {
+  min-width: 170px;
+  height: 44px;
+  padding: 0 12px;
+
+  background: var(--nm-surface-2);
+  border: 1px solid var(--nm-border);
+  border-radius: 12px;
+
+  color: var(--nm-text);
+  font-size: 13.5px;
+  font-family: inherit;
+}
+
+.matter-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 20px;
+
+  background: var(--nm-primary-grad);
+  border-radius: 12px;
+
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 650;
+
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.matter-upload-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* The real input stays mounted — it is what the click opens —
+   but it is not part of the layout. */
+.matter-upload-btn input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.matter-upload-btn:has(input:disabled) {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.matter-doc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.matter-doc {
+  background: var(--nm-surface-2);
+  border: 1px solid var(--nm-border-soft);
+  border-radius: 14px;
+  padding: 13px 15px;
+}
+
+.matter-doc-line {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.matter-doc-icon {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.matter-doc-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.matter-doc-meta strong {
+  display: block;
+  color: var(--nm-text);
+  font-size: 13.5px;
+  font-weight: 650;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.matter-doc-meta span {
+  display: block;
+  margin-top: 3px;
+  color: var(--nm-text-mute);
+  font-size: 12px;
+}
+
+.matter-doc-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.doc-ghost {
+  padding: 7px 13px;
+
+  background: var(--nm-surface);
+  border: 1px solid var(--nm-border);
+  border-radius: 999px;
+
+  color: var(--nm-primary);
+  font-size: 12px;
+  font-weight: 650;
+  font-family: inherit;
+
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.doc-ghost:hover {
+  background: var(--nm-primary-soft);
+}
+
+.doc-ghost-danger {
+  color: var(--nm-danger);
+}
+
+.doc-ghost-danger:hover {
+  background: var(--nm-danger-bg);
+  border-color: var(--nm-danger-border);
+}
+
+.doc-muted {
+  color: var(--nm-text-mute);
+  font-size: 12px;
+}
+
+.matter-doc-note {
+  margin: 10px 0 0;
+  padding-top: 10px;
+  border-top: 1px dashed var(--nm-border);
+
+  color: var(--nm-text-mute);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.matter-doc-preview {
+  margin-top: 13px;
+  padding-top: 13px;
+  border-top: 1px dashed var(--nm-border);
+}
+
+.matter-doc-preview img {
+  display: block;
+  max-width: 100%;
+  max-height: 420px;
+
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid var(--nm-border);
+  background: var(--nm-surface);
+}
+
+.matter-doc-preview object {
+  display: block;
+  width: 100%;
+  height: 440px;
+
+  border-radius: 10px;
+  border: 1px solid var(--nm-border);
+  background: var(--nm-surface);
+}
+
+/* ---------- empty ---------- */
+
+.matter-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 30px 16px;
+
+  background: var(--nm-surface-2);
+  border: 1px dashed var(--nm-border);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.matter-empty span {
+  font-size: 22px;
+  opacity: 0.7;
+}
+
+.matter-empty p {
+  margin: 0;
+  color: var(--nm-text-mute);
+  font-size: 13.5px;
+}
+
+/* =========================================================
+   HEARING HISTORY
+   ========================================================= */
+
+.matter-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 6px;
+  display: grid;
+  gap: 0;
+  border-left: 2px solid var(--nm-border-soft);
+}
+
+.matter-timeline li {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 0 0 20px 22px;
+}
+
+.matter-timeline li:last-child {
+  padding-bottom: 0;
+}
+
+.matter-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 5px;
+
+  width: 12px;
+  height: 12px;
+  background: var(--nm-primary);
+  border: 3px solid var(--nm-surface);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--nm-border);
+}
+
+.matter-timeline-date {
+  flex-shrink: 0;
+  min-width: 106px;
+  color: var(--nm-text-mute);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.matter-timeline strong {
+  display: block;
+  color: var(--nm-text);
+  font-size: 14px;
+}
+
+.matter-timeline div span {
+  display: block;
+  margin-top: 3px;
+  color: var(--nm-text-mute);
+  font-size: 12.5px;
+}
+
+/* =========================================================
+   WHERE THE RECORD CAME FROM
+
+   Shown once, under the header: this is a development dataset,
+   not a live eCourts feed, and the page says so before any
+   number on it is read as the court's today.
+   ========================================================= */
+
+.matter-source {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  margin: 16px 0 0;
+  padding: 13px 16px;
+
+  background: var(--nm-warn-bg);
+  border: 1px solid var(--nm-warn-border);
+  border-radius: 14px;
+
+  color: var(--nm-warn);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.matter-source-tag {
+  flex-shrink: 0;
+
+  padding: 4px 10px;
+  border-radius: 999px;
+
+  background: var(--nm-warn-border);
+  color: var(--nm-warn);
+
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.matter-source strong {
+  color: var(--nm-warn);
+}
+
+/* =========================================================
+   ORDERS THE COURT HAS PASSED
+   ========================================================= */
+
+.matter-orders {
+  margin-top: 18px;
+}
+
+.matter-order-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.matter-order-list li {
+  padding: 14px 16px;
+
+  background: var(--nm-surface-2);
+  border: 1px solid var(--nm-border);
+  border-radius: 14px;
+}
+
+.matter-order-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.matter-order-line strong {
+  color: var(--nm-text);
+  font-size: 14px;
+}
+
+.matter-order-date {
+  flex-shrink: 0;
+
+  color: var(--nm-text-mute);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.matter-order-section {
+  display: block;
+  margin-top: 5px;
+
+  color: var(--nm-primary);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.matter-order-list p {
+  margin: 8px 0 0;
+
+  color: var(--nm-text-mute);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 940px) {
+  .matter-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .matter-detail {
+    margin-top: 26px;
+  }
+
+  .matter-head {
+    padding: 20px 18px;
+  }
+
+  .matter-head-main {
+    flex-direction: column;
+  }
+
+  .matter-head-side {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .matter-parties {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .matter-party-arrow {
+    transform: rotate(90deg);
+  }
+
+  .matter-doc-line {
+    flex-wrap: wrap;
+  }
+
+  .matter-doc-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .matter-stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .matter-timeline li {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .matter-source {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .matter-order-line {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+/* =========================================================
+   STATUS, NEXT STEPS, TIMELINE STEPS, ORDER ACTIONS
+
+   Added with the CNR dashboard: a record read from the case
+   service says where it stands, what the guidance set advises
+   from that standing, and offers the door an order goes through.
+   ========================================================= */
+
+/* How the source describes where the matter stands — pending or
+   disposed — kept beside the stage rather than folded into a
+   paragraph, because the two read very differently at a glance. */
+.matter-status {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-end;
+
+  padding: 5px 13px;
+
+  border: 1px solid transparent;
+  border-radius: 999px;
+
+  font-size: 11.5px;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+}
+
+.matter-status-pending {
+  background: var(--nm-success-bg);
+  border-color: var(--nm-success-border);
+  color: var(--nm-success);
+}
+
+.matter-status-disposed {
+  background: var(--nm-surface-3);
+  border-color: var(--nm-border);
+  color: var(--nm-text-soft);
+}
+
+/* NEXT STEPS — the standing guidance service, asked from this
+   record. The button is quiet until there is an answer to show. */
+.matter-guidance {
+  margin-top: 16px;
+  padding-top: 15px;
+  border-top: 1px solid var(--nm-border-soft);
+}
+
+.matter-guidance-btn {
+  padding: 9px 17px;
+
+  background: var(--nm-surface);
+  border: 1px solid var(--nm-border);
+  border-radius: 999px;
+
+  color: var(--nm-primary-deep);
+  font-size: 12.5px;
+  font-weight: 700;
+  font-family: inherit;
+
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.matter-guidance-btn:hover:not(:disabled) {
+  background: var(--nm-primary-soft);
+}
+
+.matter-guidance-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.matter-guidance-error {
+  margin: 11px 0 0;
+  color: var(--nm-danger);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.matter-guidance-result {
+  margin-top: 11px;
+  padding: 12px 13px;
+
+  background: var(--nm-surface-2);
+  border: 1px solid var(--nm-border-soft);
+  border-radius: 13px;
+}
+
+.matter-guidance-result p {
+  margin: 0;
+  color: var(--nm-text);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.matter-guidance-stage {
+  margin-bottom: 6px !important;
+  color: var(--nm-primary-deep) !important;
+  font-weight: 650;
+}
+
+.matter-guidance-note {
+  margin-top: 9px !important;
+  color: var(--nm-text-mute) !important;
+  font-size: 11px !important;
+}
+
+/* The court's own copy of an order is not in the dataset, so the
+   action is the one that exists: open it in Court Orders, where the
+   extraction and explanation service reads a pasted or uploaded
+   copy of the document itself. */
+.matter-order-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+/* TIMELINE STEPS — the framing events and the listing that has not
+   happened yet are marked, so a reader can find them in a long list
+   without every row shouting equally. */
+.matter-timeline li.is-milestone strong {
+  color: var(--nm-primary-deep);
+}
+
+.matter-timeline li.is-milestone::before {
+  background: var(--nm-indigo-400);
+}
+
+.matter-timeline li.is-upcoming::before {
+  background: var(--nm-surface);
+  border-color: var(--nm-primary);
+  box-shadow: 0 0 0 2px var(--nm-primary);
+}
+
+.matter-timeline li.is-next strong {
+  color: var(--nm-primary-deep);
+}
+
+.matter-timeline li.is-next .matter-timeline-date {
+  color: var(--nm-primary-deep);
+}
+
+@media (max-width: 620px) {
+  .matter-status {
+    align-self: flex-start;
+  }
+}
+
+/* =========================================================
+   COURT DOCUMENTS — case-service files
+   ========================================================= */
+
+.matter-court-documents .cdoc-chip {
+  flex-shrink: 0;
+
+  padding: 5px 11px;
+
+  border: 1px solid var(--nm-warn-border);
+  border-radius: 999px;
+
+  background: var(--nm-warn-bg);
+
+  color: var(--nm-warn);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.cdoc-demo {
+  margin: 0 0 14px;
+
+  padding: 11px 14px;
+
+  border: 1px solid var(--nm-warn-border);
+  border-radius: 12px;
+
+  background: var(--nm-warn-bg);
+
+  color: var(--nm-warn);
+
+  font-size: 12.5px;
+
+  line-height: 1.55;
+}
+
+.cdoc-demo strong {
+  color: var(--nm-warn);
+}
+
+.cdoc-state {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin: 0;
+
+  padding: 18px 16px;
+
+  border: 1px dashed var(--nm-border);
+  border-radius: 14px;
+
+  background: var(--nm-surface-2);
+
+  color: var(--nm-text-mute);
+
+  font-size: 13.5px;
+}
+
+.cdoc-state-error {
+  border-color: var(--nm-danger-border);
+  border-style: solid;
+
+  background: var(--nm-danger-bg);
+
+  color: var(--nm-danger);
+}
+
+.cdoc-state-error .doc-ghost {
+  margin-left: auto;
+}
+
+.cdoc-list {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  gap: 10px;
+}
+
+.cdoc-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 13px 15px;
+
+  border: 1px solid var(--nm-border);
+  border-radius: 14px;
+
+  background: var(--nm-surface-2);
+}
+
+.cdoc-icon {
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 11px;
+
+  background: var(--nm-primary-soft);
+
+  font-size: 17px;
+}
+
+.cdoc-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.cdoc-meta strong {
+  display: block;
+
+  color: var(--nm-text);
+
+  font-size: 13.5px;
+
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+}
+
+.cdoc-meta span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--nm-text-mute);
+
+  font-size: 12px;
+}
+
+.cdoc-actions {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.cdoc-actions a.doc-ghost {
+  text-decoration: none;
+}
+
+.cdoc-na {
+  color: var(--nm-text-mute);
+
+  font-size: 12px;
+}
+
+.cdoc-note {
+  display: block;
+
+  max-width: 440px;
+
+  color: var(--nm-text-mute);
+
+  font-size: 12.5px;
+
+  line-height: 1.55;
+}
+
+@media (max-width: 620px) {
+  .cdoc-item {
+    flex-wrap: wrap;
+  }
+
+  .cdoc-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

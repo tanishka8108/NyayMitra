@@ -1,0 +1,136 @@
+/* =========================================================
+   NLP SERVICE STATUS BANNER
+   ========================================================= */
+
+.service-status {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 16px;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+/* ---------- ONLINE / CHECKING (quiet pills) ---------- */
+
+.service-status-online,
+.service-status-checking {
+  display: inline-flex;
+  width: fit-content;
+
+  padding: 7px 13px;
+
+  border: 1px solid var(--nm-border);
+
+  border-radius: 999px;
+
+  background: var(--nm-surface);
+
+  color: var(--nm-text-mute);
+}
+
+.service-status-online {
+  border-color: var(--nm-success-border);
+
+  color: var(--nm-success);
+}
+
+.service-status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--nm-text-mute);
+}
+
+.service-status-online .service-status-dot {
+  background: var(--nm-success);
+
+  box-shadow: 0 0 0 3px rgba(33, 168, 102, 0.16);
+}
+
+/* ---------- OFFLINE (actionable banner) ---------- */
+
+.service-status-offline {
+  align-items: flex-start;
+
+  padding: 15px 16px;
+
+  border: 1px solid var(--nm-danger-border);
+
+  border-radius: 16px;
+
+  background: var(--nm-danger-bg);
+
+  color: var(--nm-danger);
+}
+
+.service-status-icon {
+  font-size: 16px;
+
+  line-height: 1.3;
+}
+
+.service-status-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.service-status-body strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.service-status-body p {
+  margin: 0;
+
+  color: var(--nm-danger);
+
+  font-size: 12px;
+  font-weight: 500;
+
+  line-height: 1.6;
+}
+
+.service-status-body code {
+  padding: 1px 5px;
+
+  border-radius: 5px;
+
+  background: var(--nm-danger-bg);
+
+  font-size: 11px;
+}
+
+.service-status-offline button {
+  flex-shrink: 0;
+
+  padding: 8px 15px;
+
+  border: 1px solid var(--nm-danger-border);
+
+  border-radius: 999px;
+
+  background: var(--nm-surface);
+
+  color: var(--nm-danger);
+
+  font-size: 11px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.service-status-offline button:hover {
+  border-color: var(--nm-danger);
+}

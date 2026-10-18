@@ -1,0 +1,152 @@
+[
+  {
+    "category_id": "INC001",
+    "category_name": "Online financial fraud / unauthorized digital transaction",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC002",
+    "category_name": "OTP, phishing, impersonation or scam calls",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC003",
+    "category_name": "Unauthorized access / hacking / computer-related attack",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC004",
+    "category_name": "Cyber stalking or online harassment",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC005",
+    "category_name": "Fake profile / online personation / identity misuse",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC006",
+    "category_name": "Online shopping / e-commerce consumer issue",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC007",
+    "category_name": "Consumer service deficiency / refund or service complaint",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC008",
+    "category_name": "Domestic violence or cruelty within a household",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC009",
+    "category_name": "Sexual harassment at workplace",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC010",
+    "category_name": "Sexual offence involving a child",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC011",
+    "category_name": "Threats, intimidation or intentional insult",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC012",
+    "category_name": "Physical assault / hurt",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC013",
+    "category_name": "Theft, robbery or snatching",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC014",
+    "category_name": "Cheating, fraud or criminal breach of trust",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC015",
+    "category_name": "Land / property ownership or transfer dispute",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC016",
+    "category_name": "Landlord-tenant / lease dispute",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC017",
+    "category_name": "Wages / salary / employment payment issue",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC018",
+    "category_name": "Identity-document or personation fraud",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC019",
+    "category_name": "Privacy / personal-data issue",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC020",
+    "category_name": "Caste-based atrocity or discrimination complaint",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC021",
+    "category_name": "Motor vehicle accident / road incident",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC022",
+    "category_name": "Public-service grievance",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC023",
+    "category_name": "Right to Information (RTI) issue",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC024",
+    "category_name": "Environmental pollution / environmental grievance",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  },
+  {
+    "category_id": "INC025",
+    "category_name": "Court notice / summons / legal communication",
+    "purpose": "Initial classification only; not a legal conclusion.",
+    "classification_rule": "Match the user's described situation to this category when the facts reasonably support it; otherwise ask clarifying questions."
+  }
+]

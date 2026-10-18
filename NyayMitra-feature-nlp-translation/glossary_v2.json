@@ -1,0 +1,237 @@
+{
+  "glossary_v1": [
+    {
+      "term_id": "g001",
+      "formal_term": "sine die",
+      "plain_explanation_en": "Postponed indefinitely, with no new date fixed yet.",
+      "category": "Adjournment / Postponement",
+      "plain_explanation_hi": "अनिश्चित काल के लिए स्थगित कर दिया गया, अभी तक कोई नई तारीख तय नहीं की गई है।",
+      "plain_explanation_mr": "अद्याप कोणतीही नवीन तारीख निश्चित न करता अनिश्चित काळासाठी पुढे ढकलण्यात आले."
+    },
+    {
+      "term_id": "g002",
+      "formal_term": "adjourned",
+      "plain_explanation_en": "The hearing has been postponed to a later date.",
+      "category": "Adjournment / Postponement",
+      "plain_explanation_hi": "सुनवाई को बाद की तारीख तक के लिए स्थगित कर दिया गया है।",
+      "plain_explanation_mr": "सुनावणी नंतरच्या तारखेपर्यंत पुढे ढकलण्यात आली आहे."
+    },
+    {
+      "term_id": "g003",
+      "formal_term": "part-heard",
+      "plain_explanation_en": "The court has started hearing the case but hasn't finished; it will continue later, usually with the same judge.",
+      "category": "Hearing / Listing",
+      "plain_explanation_hi": "अदालत ने मामले की सुनवाई शुरू कर दी है लेकिन समाप्त नहीं हुई है; यह बाद में जारी रहेगा, आमतौर पर उसी न्यायाधीश के साथ।",
+      "plain_explanation_mr": "न्यायालयाने या प्रकरणाची सुनावणी सुरू केली आहे परंतु ती पूर्ण झालेली नाही; ती नंतर सुरू राहील, सहसा त्याच न्यायाधीशासोबत."
+    },
+    {
+      "term_id": "g004",
+      "formal_term": "listed for arguments",
+      "plain_explanation_en": "Scheduled for lawyers to present their case to the judge.",
+      "category": "Hearing / Listing",
+      "plain_explanation_hi": "वकीलों के लिए न्यायाधीश के सामने अपना मामला प्रस्तुत करने के लिए निर्धारित किया गया।",
+      "plain_explanation_mr": "वकिलांनी त्यांचे प्रकरण न्यायाधीशांसमोर सादर करण्याचे नियोजन केले आहे."
+    },
+    {
+      "term_id": "g005",
+      "formal_term": "listed under miscellaneous",
+      "plain_explanation_en": "Placed in a general category for minor or procedural matters, not necessarily the main case hearing.",
+      "category": "Hearing / Listing",
+      "plain_explanation_hi": "मामूली या प्रक्रियात्मक मामलों के लिए एक सामान्य श्रेणी में रखा गया है, जरूरी नहीं कि मुख्य मामले की सुनवाई हो।",
+      "plain_explanation_mr": "किरकोळ किंवा प्रक्रियात्मक बाबींसाठी सामान्य श्रेणीत ठेवले गेले आहे, मुख्य खटल्याची सुनावणी आवश्यक नाही."
+    },
+    {
+      "term_id": "g006",
+      "formal_term": "disposed of",
+      "plain_explanation_en": "The case has been concluded by the court — this does not automatically mean you lost.",
+      "category": "Orders / Judgments",
+      "plain_explanation_hi": "मामला अदालत द्वारा समाप्त कर दिया गया है-इसका मतलब यह नहीं है कि आप हार गए हैं।",
+      "plain_explanation_mr": "न्यायालयाने या प्रकरणाचा निष्कर्ष काढला आहे-याचा अर्थ तुम्ही पराभूत झालात असा होत नाही."
+    },
+    {
+      "term_id": "g007",
+      "formal_term": "dismissed for default",
+      "plain_explanation_en": "The case was thrown out because a required person did not show up in court.",
+      "category": "Orders / Judgments",
+      "plain_explanation_hi": "मामला इसलिए खारिज कर दिया गया क्योंकि एक आवश्यक व्यक्ति अदालत में पेश नहीं हुआ था।",
+      "plain_explanation_mr": "आवश्यक व्यक्ती न्यायालयात हजर न झाल्याने हे प्रकरण फेटाळण्यात आले."
+    },
+    {
+      "term_id": "g008",
+      "formal_term": "ex parte",
+      "plain_explanation_en": "A decision made with only one side present, because the other side did not appear.",
+      "category": "Orders / Judgments",
+      "plain_explanation_hi": "केवल एक पक्ष के उपस्थित होने के साथ किया गया निर्णय, क्योंकि दूसरा पक्ष उपस्थित नहीं हुआ।",
+      "plain_explanation_mr": "केवळ एक बाजू उपस्थित राहून घेतलेला निर्णय, कारण दुसरी बाजू हजर झाली नाही."
+    },
+    {
+      "term_id": "g009",
+      "formal_term": "interim order",
+      "plain_explanation_en": "A temporary order that applies until the court makes its final decision.",
+      "category": "Orders / Judgments",
+      "plain_explanation_hi": "एक अस्थायी आदेश जो अदालत द्वारा अपना अंतिम निर्णय लेने तक लागू होता है।",
+      "plain_explanation_mr": "न्यायालय आपला अंतिम निर्णय देईपर्यंत लागू होणारा तात्पुरता आदेश."
+    },
+    {
+      "term_id": "g010",
+      "formal_term": "stay",
+      "plain_explanation_en": "A court order that pauses or halts an action from happening.",
+      "category": "Orders / Judgments",
+      "plain_explanation_hi": "एक अदालती आदेश जो किसी कार्रवाई को होने से रोकता है या रोकता है।",
+      "plain_explanation_mr": "एखाद्या कारवाईला स्थगिती देणारा किंवा घडण्यापासून रोखणारा न्यायालयीन आदेश."
+    },
+    {
+      "term_id": "g011",
+      "formal_term": "relief",
+      "plain_explanation_en": "The specific remedy or outcome a party is asking the court to grant.",
+      "category": "Orders / Judgments",
+      "plain_explanation_hi": "विशिष्ट उपाय या परिणाम जो एक पक्ष अदालत से देने के लिए कह रहा है।",
+      "plain_explanation_mr": "एखादा पक्ष विशिष्ट उपाय किंवा निकाल न्यायालयाला मंजूर करण्यास सांगत आहे."
+    },
+    {
+      "term_id": "g012",
+      "formal_term": "notice issued",
+      "plain_explanation_en": "The court has formally informed the other party and asked them to respond.",
+      "category": "Notice / Service",
+      "plain_explanation_hi": "अदालत ने औपचारिक रूप से दूसरे पक्ष को सूचित कर दिया है और उन्हें जवाब देने के लिए कहा है।",
+      "plain_explanation_mr": "न्यायालयाने औपचारिकपणे दुसऱ्या पक्षाला कळवले आहे आणि त्यांना उत्तर देण्यास सांगितले आहे."
+    },
+    {
+      "term_id": "g013",
+      "formal_term": "returned unserved",
+      "plain_explanation_en": "The court's attempt to officially notify someone failed — they could not be reached.",
+      "category": "Notice / Service",
+      "plain_explanation_hi": "किसी को आधिकारिक रूप से सूचित करने का अदालत का प्रयास विफल रहा-उनसे संपर्क नहीं किया जा सका।",
+      "plain_explanation_mr": "एखाद्याला अधिकृतपणे सूचित करण्याचा न्यायालयाचा प्रयत्न अयशस्वी झाला-त्यांच्याशी संपर्क साधता आला नाही."
+    },
+    {
+      "term_id": "g014",
+      "formal_term": "summons",
+      "plain_explanation_en": "An official document ordering someone to appear in court.",
+      "category": "Notice / Service",
+      "plain_explanation_hi": "एक आधिकारिक दस्तावेज़ जो किसी को अदालत में पेश होने का आदेश देता है।",
+      "plain_explanation_mr": "एखाद्याला न्यायालयात हजर राहण्याचे आदेश देणारे अधिकृत दस्तऐवज."
+    },
+    {
+      "term_id": "g015",
+      "formal_term": "transferred to another bench",
+      "plain_explanation_en": "Moved to a different judge or courtroom, usually for administrative reasons.",
+      "category": "Transfer / Bench",
+      "plain_explanation_hi": "आमतौर पर प्रशासनिक कारणों से एक अलग न्यायाधीश या अदालत कक्ष में स्थानांतरित किया जाता है।",
+      "plain_explanation_mr": "सहसा प्रशासकीय कारणांसाठी वेगळ्या न्यायाधीश किंवा न्यायालयामध्ये हलवले गेले."
+    },
+    {
+      "term_id": "g016",
+      "formal_term": "want of jurisdiction",
+      "plain_explanation_en": "The court does not have the legal authority to hear this particular case.",
+      "category": "Transfer / Bench",
+      "plain_explanation_hi": "अदालत के पास इस विशेष मामले की सुनवाई करने का कानूनी अधिकार नहीं है।",
+      "plain_explanation_mr": "या विशिष्ट प्रकरणाची सुनावणी करण्याचा न्यायालयाकडे कायदेशीर अधिकार नाही."
+    },
+    {
+      "term_id": "g017",
+      "formal_term": "condonation of delay",
+      "plain_explanation_en": "A request asking the court to excuse a missed deadline.",
+      "category": "Filing / Procedural",
+      "plain_explanation_hi": "अदालत से चूक गई समय सीमा को माफ करने का अनुरोध।",
+      "plain_explanation_mr": "चुकलेली मुदत माफ करण्यास न्यायालयाला सांगणारी विनंती."
+    },
+    {
+      "term_id": "g018",
+      "formal_term": "vakalatnama",
+      "plain_explanation_en": "A formal document authorizing a lawyer to represent someone in court.",
+      "category": "Filing / Procedural",
+      "plain_explanation_hi": "एक औपचारिक दस्तावेज जो एक वकील को अदालत में किसी का प्रतिनिधित्व करने के लिए अधिकृत करता है।",
+      "plain_explanation_mr": "न्यायालयात एखाद्याचे प्रतिनिधित्व करण्यासाठी वकिलाला अधिकृत करणारा एक औपचारिक दस्तऐवज."
+    },
+    {
+      "term_id": "g019",
+      "formal_term": "written statement",
+      "plain_explanation_en": "The formal written response a party files to answer the claims made against them.",
+      "category": "Filing / Procedural",
+      "plain_explanation_hi": "एक पक्ष अपने खिलाफ किए गए दावों का जवाब देने के लिए औपचारिक लिखित प्रतिक्रिया दाखिल करता है।",
+      "plain_explanation_mr": "पक्ष त्यांच्याविरुद्ध केलेल्या दाव्यांचे उत्तर देण्यासाठी औपचारिक लेखी प्रतिसाद दाखल करतो."
+    },
+    {
+      "term_id": "g020",
+      "formal_term": "rejoinder",
+      "plain_explanation_en": "A written reply responding to the other party's written statement.",
+      "category": "Filing / Procedural",
+      "plain_explanation_hi": "दूसरे पक्ष के लिखित बयान का जवाब देते हुए एक लिखित जवाब।",
+      "plain_explanation_mr": "दुसऱ्या पक्षाच्या लेखी विधानाला उत्तर देणारे लेखी उत्तर."
+    },
+    {
+      "term_id": "g021",
+      "formal_term": "remanded",
+      "plain_explanation_en": "Sent back to a lower court for the case to be reconsidered.",
+      "category": "Filing / Procedural",
+      "plain_explanation_hi": "मामले पर पुनर्विचार करने के लिए निचली अदालत में वापस भेज दिया गया।",
+      "plain_explanation_mr": "या प्रकरणाचा पुनर्विचार करण्यासाठी खालच्या न्यायालयात परत पाठवण्यात आले."
+    },
+    {
+      "term_id": "g022",
+      "formal_term": "appeal admitted",
+      "plain_explanation_en": "A higher court has agreed to formally review the case again.",
+      "category": "Appeal / Review",
+      "plain_explanation_hi": "एक उच्च न्यायालय ने मामले की औपचारिक रूप से फिर से समीक्षा करने पर सहमति व्यक्त की है।",
+      "plain_explanation_mr": "उच्च न्यायालयाने या प्रकरणाचा पुन्हा औपचारिक आढावा घेण्याचे मान्य केले आहे."
+    },
+    {
+      "term_id": "g023",
+      "formal_term": "revision petition",
+      "plain_explanation_en": "A request asking a higher court to review and correct an error in a lower court's decision.",
+      "category": "Appeal / Review",
+      "plain_explanation_hi": "उच्च न्यायालय से निचली अदालत के फैसले में त्रुटि की समीक्षा करने और उसे सुधारने का अनुरोध।",
+      "plain_explanation_mr": "उच्च न्यायालयाला खालच्या न्यायालयाच्या निर्णयातील त्रुटीचा आढावा घेण्यास आणि दुरुस्त करण्यास सांगणारी विनंती."
+    },
+    {
+      "term_id": "g024",
+      "formal_term": "not maintainable",
+      "plain_explanation_en": "The court has ruled that this case or appeal cannot legally proceed as filed.",
+      "category": "Appeal / Review",
+      "plain_explanation_hi": "अदालत ने फैसला सुनाया है कि यह मामला या अपील कानूनी रूप से दायर किए गए तरीके से आगे नहीं बढ़ सकती है।",
+      "plain_explanation_mr": "न्यायालयाने निकाल दिला आहे की हे प्रकरण किंवा अपील दाखल केल्याप्रमाणे कायदेशीररित्या पुढे जाऊ शकत नाही."
+    },
+    {
+      "term_id": "g025",
+      "formal_term": "anticipatory bail",
+      "plain_explanation_en": "Advance protection from arrest, requested before an arrest actually happens.",
+      "category": "Bail / Custody",
+      "plain_explanation_hi": "गिरफ्तारी से अग्रिम सुरक्षा, वास्तव में गिरफ्तारी होने से पहले अनुरोध किया गया।",
+      "plain_explanation_mr": "अटकेपासून आगाऊ संरक्षण, अटक प्रत्यक्षात होण्यापूर्वी विनंती केली जाते."
+    },
+    {
+      "term_id": "g026",
+      "formal_term": "custody remand",
+      "plain_explanation_en": "A court order keeping a person in custody for a specified period during investigation or trial.",
+      "category": "Bail / Custody",
+      "plain_explanation_hi": "जाँच या मुकदमे के दौरान किसी व्यक्ति को एक निर्दिष्ट अवधि के लिए हिरासत में रखने का अदालती आदेश।",
+      "plain_explanation_mr": "तपास किंवा खटल्याच्या दरम्यान एखाद्या व्यक्तीला विशिष्ट कालावधीसाठी कोठडीत ठेवण्याचा न्यायालयीन आदेश."
+    },
+    {
+      "term_id": "g027",
+      "formal_term": "execution petition",
+      "plain_explanation_en": "A request to formally enforce a court's earlier decision (e.g., recovering money owed).",
+      "category": "Execution / Compliance",
+      "plain_explanation_hi": "अदालत के पहले के फैसले को औपचारिक रूप से लागू करने का अनुरोध (उदाहरण के लिए, बकाया धन की वसूली)।",
+      "plain_explanation_mr": "न्यायालयाच्या आधीच्या निर्णयाची औपचारिक अंमलबजावणी करण्याची विनंती (उदाहरणार्थ, थकबाकी रक्कम वसूल करणे)."
+    },
+    {
+      "term_id": "g028",
+      "formal_term": "compliance report",
+      "plain_explanation_en": "A document proving that an earlier court order has actually been followed.",
+      "category": "Execution / Compliance",
+      "plain_explanation_hi": "यह साबित करने वाला एक दस्तावेज़ कि पहले के अदालत के आदेश का वास्तव में पालन किया गया है।",
+      "plain_explanation_mr": "पूर्वीच्या न्यायालयाच्या आदेशाचे प्रत्यक्षात पालन केले गेले आहे हे सिद्ध करणारा दस्तऐवज."
+    }
+  ],
+  "notes": {
+    "status": "v2 - English, Hindi and Marathi explanations",
+    "source": "Derived from the 50-phrase eCourts/NJDG terminology test (Week 1, Tuesday)",
+    "next_steps": [
+      "Wire into translation_service.py for glossary matching",
+      "Expose glossary matches through the authenticated translation API",
+      "Expand term list as more real case-status text becomes available"
+    ]
+  }
+}

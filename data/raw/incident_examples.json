@@ -1,0 +1,752 @@
+[
+  {
+    "example_id": "INC001_EX01",
+    "category_id": "INC001",
+    "example": "I noticed money was deducted from my bank account even though I did not make that payment.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC001_EX02",
+    "category_id": "INC001",
+    "example": "Someone got access to my UPI and money was transferred without my permission.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC001_EX03",
+    "category_id": "INC001",
+    "example": "I was tricked into a payment and the money went to the wrong person.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC001_EX04",
+    "category_id": "INC001",
+    "example": "My card was used online and I do not recognize the transaction.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC001_EX05",
+    "category_id": "INC001",
+    "example": "Money was taken from my account after a suspicious online transaction.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC002_EX01",
+    "category_id": "INC002",
+    "example": "Someone called saying they were from my bank and asked for my OTP.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC002_EX02",
+    "category_id": "INC002",
+    "example": "I received a message asking me to click a link to update my account and then something went wrong.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC002_EX03",
+    "category_id": "INC002",
+    "example": "A person pretended to be a government official and asked me for account details.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC002_EX04",
+    "category_id": "INC002",
+    "example": "I gave a caller an OTP because I thought it was a genuine support call.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC002_EX05",
+    "category_id": "INC002",
+    "example": "Someone used a fake bank or delivery message to get my information.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC003_EX01",
+    "category_id": "INC003",
+    "example": "I think someone accessed my computer account without permission.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC003_EX02",
+    "category_id": "INC003",
+    "example": "My email account was taken over and I cannot access it.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC003_EX03",
+    "category_id": "INC003",
+    "example": "Someone got into my online account even though I did not give them permission.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC003_EX04",
+    "category_id": "INC003",
+    "example": "My computer system was accessed by an unknown person.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC003_EX05",
+    "category_id": "INC003",
+    "example": "I found activity on my account that I did not do.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC004_EX01",
+    "category_id": "INC004",
+    "example": "Someone keeps sending me unwanted messages online.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC004_EX02",
+    "category_id": "INC004",
+    "example": "A person keeps following my online activity and contacting me repeatedly.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC004_EX03",
+    "category_id": "INC004",
+    "example": "I am receiving repeated threatening or unwanted messages on social media.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC004_EX04",
+    "category_id": "INC004",
+    "example": "Someone is repeatedly contacting me online after I asked them to stop.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC004_EX05",
+    "category_id": "INC004",
+    "example": "I feel harassed by someone through messages and social media.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC005_EX01",
+    "category_id": "INC005",
+    "example": "Someone created a social media profile using my name and photo.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC005_EX02",
+    "category_id": "INC005",
+    "example": "A person is pretending to be me online.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC005_EX03",
+    "category_id": "INC005",
+    "example": "There is a fake account using my identity.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC005_EX04",
+    "category_id": "INC005",
+    "example": "Someone is using my details to contact other people as if they were me.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC005_EX05",
+    "category_id": "INC005",
+    "example": "A fake profile has been created in my name.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC006_EX01",
+    "category_id": "INC006",
+    "example": "I bought something online and received a completely different product.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC006_EX02",
+    "category_id": "INC006",
+    "example": "The product I ordered online never arrived.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC006_EX03",
+    "category_id": "INC006",
+    "example": "The seller is refusing to address my online shopping complaint.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC006_EX04",
+    "category_id": "INC006",
+    "example": "I paid for an online order but the service was not as promised.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC006_EX05",
+    "category_id": "INC006",
+    "example": "I think an online seller used misleading information to sell me something.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC007_EX01",
+    "category_id": "INC007",
+    "example": "I paid for a service but the company did not provide it properly.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC007_EX02",
+    "category_id": "INC007",
+    "example": "The service I received was defective and the company is not resolving it.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC007_EX03",
+    "category_id": "INC007",
+    "example": "I asked for a refund but the service provider has not responded.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC007_EX04",
+    "category_id": "INC007",
+    "example": "The company charged me but did not provide the promised service.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC007_EX05",
+    "category_id": "INC007",
+    "example": "I have a complaint about poor service and want to know what route is available.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC008_EX01",
+    "category_id": "INC008",
+    "example": "I am facing repeated abuse or cruelty at home.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC008_EX02",
+    "category_id": "INC008",
+    "example": "My spouse or a family member is behaving violently toward me.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC008_EX03",
+    "category_id": "INC008",
+    "example": "I am being threatened or controlled by someone in my household.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC008_EX04",
+    "category_id": "INC008",
+    "example": "I am facing harassment by my spouse's relatives.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC008_EX05",
+    "category_id": "INC008",
+    "example": "I need information about support available for domestic violence.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC009_EX01",
+    "category_id": "INC009",
+    "example": "A person at my workplace is making unwanted sexual comments toward me.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC009_EX02",
+    "category_id": "INC009",
+    "example": "I received inappropriate messages from someone at work.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC009_EX03",
+    "category_id": "INC009",
+    "example": "I want to report sexual harassment at my workplace.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC009_EX04",
+    "category_id": "INC009",
+    "example": "My colleague keeps making unwanted sexual remarks.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC009_EX05",
+    "category_id": "INC009",
+    "example": "I am unsure what workplace complaint process applies to what happened.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC010_EX01",
+    "category_id": "INC010",
+    "example": "I am concerned about inappropriate sexual conduct involving a child.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC010_EX02",
+    "category_id": "INC010",
+    "example": "A child I know may have been subjected to a sexual offence.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC010_EX03",
+    "category_id": "INC010",
+    "example": "I need to understand what reporting or protection steps may apply to a child-safety incident.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC010_EX04",
+    "category_id": "INC010",
+    "example": "I witnessed behaviour involving a child that concerns me.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC010_EX05",
+    "category_id": "INC010",
+    "example": "I need help understanding the official route for reporting a child sexual-offence concern.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC011_EX01",
+    "category_id": "INC011",
+    "example": "Someone is threatening me and I am worried about what they might do.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC011_EX02",
+    "category_id": "INC011",
+    "example": "A person keeps threatening me over messages.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC011_EX03",
+    "category_id": "INC011",
+    "example": "I was told that something bad would happen if I did not do what they wanted.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC011_EX04",
+    "category_id": "INC011",
+    "example": "Someone is intimidating me because of a dispute.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC011_EX05",
+    "category_id": "INC011",
+    "example": "I received threats and want to know what information I should preserve.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC012_EX01",
+    "category_id": "INC012",
+    "example": "Someone hit me during an argument.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC012_EX02",
+    "category_id": "INC012",
+    "example": "I was physically assaulted by another person.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC012_EX03",
+    "category_id": "INC012",
+    "example": "I was injured after someone used force against me.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC012_EX04",
+    "category_id": "INC012",
+    "example": "I want to know what I should preserve after a physical assault.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC012_EX05",
+    "category_id": "INC012",
+    "example": "There was a fight and I was hurt.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC013_EX01",
+    "category_id": "INC013",
+    "example": "My phone was taken from me without my permission.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC013_EX02",
+    "category_id": "INC013",
+    "example": "Someone grabbed my bag and ran away.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC013_EX03",
+    "category_id": "INC013",
+    "example": "My belongings were stolen.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC013_EX04",
+    "category_id": "INC013",
+    "example": "I think someone took my property without permission.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC013_EX05",
+    "category_id": "INC013",
+    "example": "I was robbed and want to know what information I should keep.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC014_EX01",
+    "category_id": "INC014",
+    "example": "I paid someone for a service and they disappeared without doing it.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC014_EX02",
+    "category_id": "INC014",
+    "example": "Someone took money from me after making a false promise.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC014_EX03",
+    "category_id": "INC014",
+    "example": "I trusted a person with money or property and now they are refusing to return it.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC014_EX04",
+    "category_id": "INC014",
+    "example": "I think I was deliberately deceived in a transaction.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC014_EX05",
+    "category_id": "INC014",
+    "example": "Someone made a promise to get my money and then did something completely different.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC015_EX01",
+    "category_id": "INC015",
+    "example": "My family is disputing ownership of a piece of land.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC015_EX02",
+    "category_id": "INC015",
+    "example": "Someone is claiming ownership of property that I believe belongs to me.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC015_EX03",
+    "category_id": "INC015",
+    "example": "There is a disagreement about a property transfer.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC015_EX04",
+    "category_id": "INC015",
+    "example": "I have a dispute about a house or land and its ownership documents.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC015_EX05",
+    "category_id": "INC015",
+    "example": "I want to understand what information is important in a property dispute.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC016_EX01",
+    "category_id": "INC016",
+    "example": "My landlord and I have a dispute about my tenancy.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC016_EX02",
+    "category_id": "INC016",
+    "example": "My landlord is refusing to return my deposit.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC016_EX03",
+    "category_id": "INC016",
+    "example": "I am having a disagreement with my tenant about the lease.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC016_EX04",
+    "category_id": "INC016",
+    "example": "My rental agreement is being disputed.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC016_EX05",
+    "category_id": "INC016",
+    "example": "I need to understand what documents matter in a landlord-tenant dispute.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC017_EX01",
+    "category_id": "INC017",
+    "example": "My employer has not paid my salary.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC017_EX02",
+    "category_id": "INC017",
+    "example": "I have not received wages that I was supposed to receive.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC017_EX03",
+    "category_id": "INC017",
+    "example": "My employer is delaying my payment.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC017_EX04",
+    "category_id": "INC017",
+    "example": "I left my job but some payment is still outstanding.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC017_EX05",
+    "category_id": "INC017",
+    "example": "I want to know what official route may exist for an unpaid-wages complaint.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC018_EX01",
+    "category_id": "INC018",
+    "example": "Someone used my identity document without my permission.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC018_EX02",
+    "category_id": "INC018",
+    "example": "I think somebody is pretending to be me using my documents.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC018_EX03",
+    "category_id": "INC018",
+    "example": "My identity information was used for something I did not authorize.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC018_EX04",
+    "category_id": "INC018",
+    "example": "I found a document or account connected to me that I did not create.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC018_EX05",
+    "category_id": "INC018",
+    "example": "I am worried that my identity documents were misused.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC019_EX01",
+    "category_id": "INC019",
+    "example": "Someone shared my personal information without my permission.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC019_EX02",
+    "category_id": "INC019",
+    "example": "My private information was exposed online.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC019_EX03",
+    "category_id": "INC019",
+    "example": "I want to know what I can do about misuse of my personal data.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC019_EX04",
+    "category_id": "INC019",
+    "example": "A company or person has disclosed information about me that I did not expect them to share.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC019_EX05",
+    "category_id": "INC019",
+    "example": "I am concerned that my personal information is being used without permission.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC020_EX01",
+    "category_id": "INC020",
+    "example": "I believe I was targeted because of my caste.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC020_EX02",
+    "category_id": "INC020",
+    "example": "I experienced discriminatory treatment connected to my caste.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC020_EX03",
+    "category_id": "INC020",
+    "example": "Someone used caste-based abuse against me.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC020_EX04",
+    "category_id": "INC020",
+    "example": "I want to know what official reporting or support may apply to a caste-atrocity concern.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC020_EX05",
+    "category_id": "INC020",
+    "example": "I have evidence of a caste-related incident and want to understand the next steps.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC021_EX01",
+    "category_id": "INC021",
+    "example": "I was injured in a road accident involving another vehicle.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC021_EX02",
+    "category_id": "INC021",
+    "example": "My vehicle was damaged in an accident.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC021_EX03",
+    "category_id": "INC021",
+    "example": "I was involved in a road accident and want to know what information to preserve.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC021_EX04",
+    "category_id": "INC021",
+    "example": "Another vehicle hit me and I need to understand the reporting process.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC021_EX05",
+    "category_id": "INC021",
+    "example": "I was in a traffic accident and there may be a compensation issue.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC022_EX01",
+    "category_id": "INC022",
+    "example": "I submitted a complaint to a government office but have not received a response.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC022_EX02",
+    "category_id": "INC022",
+    "example": "I am facing a problem with a public service.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC022_EX03",
+    "category_id": "INC022",
+    "example": "A government service was not provided as expected.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC022_EX04",
+    "category_id": "INC022",
+    "example": "I want to know where I can raise a grievance about a public authority.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC022_EX05",
+    "category_id": "INC022",
+    "example": "I have already complained to an office and want to know what information to keep.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC023_EX01",
+    "category_id": "INC023",
+    "example": "I filed an RTI application and need to understand what happens next.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC023_EX02",
+    "category_id": "INC023",
+    "example": "I have not received the information I requested through RTI.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC023_EX03",
+    "category_id": "INC023",
+    "example": "I want to know how to follow up on an RTI matter.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC023_EX04",
+    "category_id": "INC023",
+    "example": "I received an RTI response that does not answer what I asked.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC023_EX05",
+    "category_id": "INC023",
+    "example": "I want to understand the official RTI process.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC024_EX01",
+    "category_id": "INC024",
+    "example": "There is pollution from a nearby activity and I want to report it.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC024_EX02",
+    "category_id": "INC024",
+    "example": "Waste is being dumped and I am concerned about the environmental impact.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC024_EX03",
+    "category_id": "INC024",
+    "example": "A business appears to be causing pollution near my area.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC024_EX04",
+    "category_id": "INC024",
+    "example": "I want to know what information to preserve for an environmental complaint.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC024_EX05",
+    "category_id": "INC024",
+    "example": "There is an environmental issue and I want to find the appropriate official route.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC025_EX01",
+    "category_id": "INC025",
+    "example": "I received a court notice and I do not understand what it means.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC025_EX02",
+    "category_id": "INC025",
+    "example": "I received a summons and I am unsure what I should do next.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC025_EX03",
+    "category_id": "INC025",
+    "example": "Someone sent me a legal notice about a dispute.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC025_EX04",
+    "category_id": "INC025",
+    "example": "I received a court communication and want to understand what information matters.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC025_EX05",
+    "category_id": "INC025",
+    "example": "I have a legal notice and want to know which details I should check.",
+    "is_synthetic": true
+  }
+]

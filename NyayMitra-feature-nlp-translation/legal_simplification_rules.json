@@ -1,0 +1,628 @@
+{
+  "version": "1.0",
+  "description": "Phrase-aware rules that turn standing legal English into plain English. Every pattern is matched case-insensitively with word boundaries, so nothing is ever replaced inside an unrelated word. Rules run top to bottom: specific standing wording rewrites first, the generic wording at the bottom rewrites only what the specific rules left behind. No rule invents a fact; each one only re-states the same fact in plainer words.",
+  "phrase_rules": [
+    {
+      "id": "matter-adjourned",
+      "pattern": "the matter is (?:hereby )?adjourned",
+      "replacement": "the hearing has been postponed",
+      "why": "An adjournment postpones the hearing; it decides nothing.",
+      "glossary_term": "adjourned"
+    },
+    {
+      "id": "part-heard-matter",
+      "pattern": "the matter is part[- ]heard",
+      "replacement": "the hearing has started but is not finished",
+      "why": "Part-heard means the hearing began and will continue later.",
+      "glossary_term": "part-heard"
+    },
+    {
+      "id": "matter-listed-for-hearing",
+      "pattern": "the matter is listed for hearing",
+      "replacement": "the case is scheduled for a hearing",
+      "why": "Listing means the court has put the case on its hearing list."
+    },
+    {
+      "id": "subject-listed-for-hearing",
+      "pattern": "the (application|petition|appeal|case) is listed for (?:final )?(?:hearing|orders?)",
+      "replacement": "the \\1 is scheduled for a hearing",
+      "why": "Listing means the court has put the case on its hearing list."
+    },
+    {
+      "id": "listed-for-arguments",
+      "pattern": "listed for arguments",
+      "replacement": "scheduled for written arguments",
+      "why": "Listing for arguments means the court is waiting for written submissions.",
+      "glossary_term": "listed for arguments"
+    },
+    {
+      "id": "listed-for-hearing",
+      "pattern": "listed for hearing",
+      "replacement": "scheduled for a hearing",
+      "why": "Listing means the court has put the case on its hearing list."
+    },
+    {
+      "id": "fixed-for-hearing",
+      "pattern": "\\b(is|are) fixed for (?:a )?hearing\\b",
+      "replacement": "\\1 set for a hearing",
+      "why": "A date fixed for hearing is a date the court has set."
+    },
+    {
+      "id": "adjourned-sine-die",
+      "pattern": "adjourned sine die",
+      "replacement": "postponed with no new date fixed",
+      "why": "Sine die means indefinitely, with no date fixed.",
+      "glossary_term": "sine die"
+    },
+    {
+      "id": "sine-die",
+      "pattern": "sine die",
+      "replacement": "with no new date fixed",
+      "why": "Sine die means indefinitely, with no date fixed.",
+      "glossary_term": "sine die"
+    },
+    {
+      "id": "adjourned-generic",
+      "pattern": "\\bis (?:hereby )?adjourned\\b",
+      "replacement": "has been postponed",
+      "why": "Adjourned means the hearing was put off."
+    },
+    {
+      "id": "dismissed-for-default",
+      "pattern": "dismissed for default",
+      "replacement": "closed because the party did not appear",
+      "why": "Dismissal for default happens when a party fails to appear or file.",
+      "glossary_term": "dismissed for default"
+    },
+    {
+      "id": "returned-unserved",
+      "pattern": "returned unserved",
+      "replacement": "sent back because the notice could not be delivered",
+      "why": "Returned unserved means the notice never reached the other side.",
+      "glossary_term": "returned unserved"
+    },
+    {
+      "id": "notice-has-been-issued-to",
+      "pattern": "notice has been issued to",
+      "replacement": "the other side has been asked to respond to",
+      "why": "Issuing notice means the court asks the other side to respond.",
+      "glossary_term": "notice issued"
+    },
+    {
+      "id": "is-hereby-issued-to",
+      "pattern": "\\bis hereby issued to\\b",
+      "replacement": "has been sent to",
+      "why": "Hereby adds nothing; the notice was sent, that is the fact."
+    },
+    {
+      "id": "issued-notice-to",
+      "pattern": "issued notice to",
+      "replacement": "asked",
+      "why": "Issuing notice means asking the other side to respond."
+    },
+    {
+      "id": "ex-parte",
+      "pattern": "ex[- ]parte",
+      "replacement": "without the other side being present",
+      "why": "Ex parte means one side was heard without the other.",
+      "glossary_term": "ex parte"
+    },
+    {
+      "id": "not-maintainable",
+      "pattern": "not maintainable",
+      "replacement": "cannot be heard by this court",
+      "why": "Not maintainable means the case cannot go on in this form.",
+      "glossary_term": "not maintainable"
+    },
+    {
+      "id": "want-of-jurisdiction",
+      "pattern": "want of jurisdiction",
+      "replacement": "the court has no power to hear it",
+      "why": "Jurisdiction is the court's power to hear a matter.",
+      "glossary_term": "want of jurisdiction"
+    },
+    {
+      "id": "appeal-admitted",
+      "pattern": "appeal (?:has been |is )?admitted",
+      "replacement": "the appeal will be heard",
+      "why": "Admitting an appeal means letting it go forward to hearing.",
+      "glossary_term": "appeal admitted"
+    },
+    {
+      "id": "condonation-of-delay",
+      "pattern": "condonation of delay",
+      "replacement": "accepting the late filing",
+      "why": "Condonation means accepting a filing that is out of time.",
+      "glossary_term": "condonation of delay"
+    },
+    {
+      "id": "interim-order",
+      "pattern": "interim order",
+      "replacement": "temporary order until the final decision",
+      "why": "An interim order is given while the case is still running.",
+      "glossary_term": "interim order"
+    },
+    {
+      "id": "stay-is-granted",
+      "pattern": "(?:the )?stay (?:order )?(?:is|has been) (?:hereby )?granted",
+      "replacement": "the case is on hold",
+      "why": "A stay stops the case until the stay is lifted.",
+      "glossary_term": "stay"
+    },
+    {
+      "id": "proceedings-stayed",
+      "pattern": "proceedings are stayed",
+      "replacement": "the case is on hold",
+      "why": "Stayed proceedings do not move until the stay is lifted.",
+      "glossary_term": "stay"
+    },
+    {
+      "id": "is-stayed",
+      "pattern": "\\bis (?:hereby )?stayed\\b",
+      "replacement": "is on hold",
+      "why": "Stayed means stopped for now.",
+      "glossary_term": "stay"
+    },
+    {
+      "id": "application-stands-disposed-of",
+      "pattern": "the application stands disposed of",
+      "replacement": "the court has finished deciding the application",
+      "why": "Disposed of means the court has finished with the application.",
+      "glossary_term": "disposed of"
+    },
+    {
+      "id": "stands-disposed-of",
+      "pattern": "stands disposed of",
+      "replacement": "has been decided",
+      "why": "Disposed of means the court has finished with the matter.",
+      "glossary_term": "disposed of"
+    },
+    {
+      "id": "is-disposed-of",
+      "pattern": "\\bis (?:hereby )?disposed of\\b",
+      "replacement": "has been decided",
+      "why": "Disposed of means the court has finished with the matter.",
+      "glossary_term": "disposed of"
+    },
+    {
+      "id": "stands-outcome",
+      "pattern": "\\bstands (allowed|granted|rejected|refused|dismissed|admitted|accepted|withdrawn|pending)\\b",
+      "replacement": "has been \\1",
+      "why": "The outcome is what matters, not the word stands."
+    },
+    {
+      "id": "is-outcome",
+      "pattern": "\\bis (?:hereby )?(allowed|granted|rejected|refused|dismissed|admitted|accepted|withdrawn)\\b",
+      "replacement": "has been \\1",
+      "why": "Hereby adds nothing; the outcome is what matters."
+    },
+    {
+      "id": "are-outcome",
+      "pattern": "\\bare (?:hereby )?(allowed|granted|rejected|refused|dismissed|admitted|accepted|withdrawn)\\b",
+      "replacement": "have been \\1",
+      "why": "Hereby adds nothing; the outcome is what matters."
+    },
+    {
+      "id": "petitioner-file-reply",
+      "pattern": "the petitioner is directed to file the reply",
+      "replacement": "the petitioner must submit the reply",
+      "why": "A direction is an instruction the party has to follow."
+    },
+    {
+      "id": "directed-to-file-reply",
+      "pattern": "is directed to file the reply",
+      "replacement": "must submit the reply",
+      "why": "A direction is an instruction the party has to follow."
+    },
+    {
+      "id": "file-the-paper",
+      "pattern": "file the (reply|written statement|rejoinder|affidavit|counter[- ]affidavit|documents|appeal|petition|application|objection)",
+      "replacement": "submit the \\1",
+      "why": "Filing means handing the paper in to the court."
+    },
+    {
+      "id": "petitioner-is-directed",
+      "pattern": "the petitioner is directed to",
+      "replacement": "the petitioner must",
+      "why": "A direction is an instruction the party has to follow."
+    },
+    {
+      "id": "respondent-is-directed",
+      "pattern": "the respondent is directed to",
+      "replacement": "the respondent must",
+      "why": "A direction is an instruction the party has to follow."
+    },
+    {
+      "id": "is-hereby-directed-to",
+      "pattern": "is hereby directed to",
+      "replacement": "must",
+      "why": "Hereby adds nothing; the instruction is what matters."
+    },
+    {
+      "id": "are-hereby-directed-to",
+      "pattern": "are hereby directed to",
+      "replacement": "must",
+      "why": "Hereby adds nothing; the instruction is what matters."
+    },
+    {
+      "id": "directed-and-ordered-to",
+      "pattern": "\\b(?:is|are) directed and ordered to\\b",
+      "replacement": "must",
+      "why": "Two words for one instruction."
+    },
+    {
+      "id": "is-directed-to",
+      "pattern": "is directed to",
+      "replacement": "must",
+      "why": "A direction is an instruction the party has to follow."
+    },
+    {
+      "id": "are-directed-to",
+      "pattern": "are directed to",
+      "replacement": "must",
+      "why": "A direction is an instruction the party has to follow."
+    },
+    {
+      "id": "it-is-hereby-ordered-that",
+      "pattern": "it is hereby ordered that",
+      "replacement": "the court orders that",
+      "why": "The order is the court speaking; it does not need to say itself twice."
+    },
+    {
+      "id": "it-is-ordered-that",
+      "pattern": "it is ordered that",
+      "replacement": "the court orders that",
+      "why": "The order is the court speaking; it does not need to say itself twice."
+    },
+    {
+      "id": "ordered-that",
+      "pattern": "(?<!court )\\bordered that\\b",
+      "replacement": "the court ordered that",
+      "why": "Who gave the order is worth saying once, plainly."
+    },
+    {
+      "id": "at-liberty-to",
+      "pattern": "(?:is|are) (?:hereby )?at liberty to",
+      "replacement": "may",
+      "why": "Being at liberty to do something means being allowed to."
+    },
+    {
+      "id": "subject-to-provisions",
+      "pattern": "subject to the provisions of",
+      "replacement": "according to the provisions of",
+      "why": "Subject to here means governed by."
+    },
+    {
+      "id": "subject-to",
+      "pattern": "subject to",
+      "replacement": "depending on",
+      "why": "Subject to here means it depends on something else."
+    },
+    {
+      "id": "pursuant-to",
+      "pattern": "pursuant to",
+      "replacement": "under",
+      "why": "Pursuant to means under or following."
+    },
+    {
+      "id": "in-accordance-with",
+      "pattern": "in accordance with",
+      "replacement": "following",
+      "why": "In accordance with means following."
+    },
+    {
+      "id": "by-virtue-of",
+      "pattern": "by virtue of",
+      "replacement": "under",
+      "why": "By virtue of means under."
+    },
+    {
+      "id": "in-the-light-of",
+      "pattern": "in the light of",
+      "replacement": "in view of",
+      "why": "Plainer wording."
+    },
+    {
+      "id": "in-the-event-that",
+      "pattern": "in the event that",
+      "replacement": "if",
+      "why": "In the event that is a long way of saying if."
+    },
+    {
+      "id": "for-the-reason-that",
+      "pattern": "for the reason that",
+      "replacement": "because",
+      "why": "For the reason that is a long way of saying because."
+    },
+    {
+      "id": "owing-to",
+      "pattern": "owing to",
+      "replacement": "because of",
+      "why": "Owing to means because of."
+    },
+    {
+      "id": "prior-to",
+      "pattern": "prior to",
+      "replacement": "before",
+      "why": "Prior to means before."
+    },
+    {
+      "id": "subsequent-to",
+      "pattern": "subsequent to",
+      "replacement": "after",
+      "why": "Subsequent to means after."
+    },
+    {
+      "id": "in-respect-of",
+      "pattern": "in respect of",
+      "replacement": "about",
+      "why": "In respect of means about."
+    },
+    {
+      "id": "with-regard-to",
+      "pattern": "with (?:reference |regard )to",
+      "replacement": "about",
+      "why": "With reference to means about."
+    },
+    {
+      "id": "in-relation-to",
+      "pattern": "in relation to",
+      "replacement": "about",
+      "why": "In relation to means about."
+    },
+    {
+      "id": "notwithstanding",
+      "pattern": "notwithstanding",
+      "replacement": "despite",
+      "why": "Notwithstanding means despite."
+    },
+    {
+      "id": "non-obstante",
+      "pattern": "non obstante anything contained in",
+      "replacement": "despite anything in",
+      "why": "Non obstante means despite."
+    },
+    {
+      "id": "inter-alia",
+      "pattern": "inter alia",
+      "replacement": "among other things",
+      "why": "Inter alia means among other things."
+    },
+    {
+      "id": "mutatis-mutandis",
+      "pattern": "mutatis mutandis",
+      "replacement": "with the needed changes",
+      "why": "Mutatis mutandis means making the necessary changes first."
+    },
+    {
+      "id": "prima-facie",
+      "pattern": "prima facie",
+      "replacement": "on the face of it",
+      "why": "Prima facie means on the face of it, before anything is proved."
+    },
+    {
+      "id": "vis-a-vis",
+      "pattern": "vis-à-vis|vis-a-vis",
+      "replacement": "compared with",
+      "why": "Vis-a-vis means compared with."
+    },
+    {
+      "id": "per-se",
+      "pattern": "per se",
+      "replacement": "by itself",
+      "why": "Per se means by itself."
+    },
+    {
+      "id": "ipso-facto",
+      "pattern": "ipso facto",
+      "replacement": "automatically",
+      "why": "Ipso facto means automatically."
+    },
+    {
+      "id": "a-fortiori",
+      "pattern": "a fortiori",
+      "replacement": "even more so",
+      "why": "A fortiori means even more so."
+    },
+    {
+      "id": "de-novo",
+      "pattern": "de novo",
+      "replacement": "afresh",
+      "why": "De novo means afresh, from the beginning."
+    },
+    {
+      "id": "to-wit",
+      "pattern": "to wit",
+      "replacement": "that is",
+      "why": "To wit means that is."
+    },
+    {
+      "id": "i-e",
+      "pattern": "\\bi\\.e\\.",
+      "replacement": "that is",
+      "why": "i.e. means that is."
+    },
+    {
+      "id": "e-g",
+      "pattern": "\\be\\.g\\.",
+      "replacement": "for example",
+      "why": "e.g. means for example."
+    },
+    {
+      "id": "viz",
+      "pattern": "\\bviz\\.",
+      "replacement": "that is",
+      "why": "viz. means that is."
+    },
+    {
+      "id": "learned-public-prosecutor",
+      "pattern": "the learned public prosecutor",
+      "replacement": "the public prosecutor",
+      "why": "Learned adds nothing for a reader who just needs to know who spoke."
+    },
+    {
+      "id": "learned-counsel",
+      "pattern": "learned counsels?",
+      "replacement": "lawyer",
+      "why": "Counsel is a lawyer."
+    },
+    {
+      "id": "the-learned-judge",
+      "pattern": "the learned (judge|court|officer)",
+      "replacement": "the \\1",
+      "why": "Learned adds nothing for a reader who just needs to know who spoke."
+    },
+    {
+      "id": "opposite-party",
+      "pattern": "the opposite party",
+      "replacement": "the other side",
+      "why": "Plainer wording."
+    },
+    {
+      "id": "whereas",
+      "pattern": "whereas",
+      "replacement": "considering that",
+      "why": "In a recital, whereas introduces what led up to the order."
+    },
+    {
+      "id": "hereinafter-referred",
+      "pattern": "hereinafter referred to as",
+      "replacement": "called",
+      "why": "A short way of naming a party once."
+    },
+    {
+      "id": "hereinafter",
+      "pattern": "hereinafter",
+      "replacement": "below",
+      "why": "Hereinafter means further down in this document."
+    },
+    {
+      "id": "hereunder",
+      "pattern": "hereunder",
+      "replacement": "under this",
+      "why": "Hereunder means under this document."
+    },
+    {
+      "id": "herein",
+      "pattern": "herein",
+      "replacement": "in this document",
+      "why": "Herein means in this document."
+    },
+    {
+      "id": "hereof",
+      "pattern": "hereof",
+      "replacement": "of this",
+      "why": "Hereof means of this document."
+    },
+    {
+      "id": "thereof",
+      "pattern": "thereof",
+      "replacement": "of it",
+      "why": "Thereof means of it."
+    },
+    {
+      "id": "therein",
+      "pattern": "therein",
+      "replacement": "in it",
+      "why": "Therein means in it."
+    },
+    {
+      "id": "thereby",
+      "pattern": "thereby",
+      "replacement": "",
+      "why": "Thereby adds nothing to the sentence it sits in."
+    },
+    {
+      "id": "hereby",
+      "pattern": "hereby",
+      "replacement": "",
+      "why": "Hereby adds nothing to the sentence it sits in."
+    },
+    {
+      "id": "the-aforesaid",
+      "pattern": "the aforesaid",
+      "replacement": "this",
+      "why": "Aforesaid points back at something already named, which is this one."
+    },
+    {
+      "id": "aforesaid",
+      "pattern": "aforesaid",
+      "replacement": "this",
+      "why": "Aforesaid points back at something already named, which is this one."
+    },
+    {
+      "id": "the-aforementioned",
+      "pattern": "the aforementioned",
+      "replacement": "this",
+      "why": "Aforementioned points back at something already named."
+    },
+    {
+      "id": "aforementioned",
+      "pattern": "aforementioned",
+      "replacement": "this",
+      "why": "Aforementioned points back at something already named."
+    },
+    {
+      "id": "the-said",
+      "pattern": "the said",
+      "replacement": "this",
+      "why": "The said simply points back at something already named."
+    },
+    {
+      "id": "said-thing",
+      "pattern": "said (application|petition|order|matter|reply|notice|document|respondent|petitioner|affidavit|appeal|judgment|judgement|decree)",
+      "replacement": "this \\1",
+      "why": "Said simply points back at something already named."
+    },
+    {
+      "id": "the-present-thing",
+      "pattern": "(?:the )?(?:present|instant) (application|petition|suit|appeal|matter|cause|case)",
+      "replacement": "this \\1",
+      "why": "Present and instant both mean this one, in front of you."
+    },
+    {
+      "id": "prayer",
+      "pattern": "the prayer",
+      "replacement": "the request",
+      "why": "A prayer in a pleading is a request."
+    },
+    {
+      "id": "versus",
+      "pattern": "versus",
+      "replacement": "vs",
+      "why": "Versus is written vs between party names."
+    },
+    {
+      "id": "shall",
+      "pattern": "\\bshall\\b",
+      "replacement": "must",
+      "why": "Shall is a command in legal drafting; must reads the same way."
+    },
+    {
+      "id": "disposed-of",
+      "pattern": "disposed of",
+      "replacement": "decided",
+      "why": "Disposed of means the court has finished with it.",
+      "glossary_term": "disposed of"
+    }
+  ],
+  "ambiguity_patterns": [
+    "\\band/or\\b",
+    "\\bat the discretion of\\b",
+    "\\bas (?:the )?court may (?:think|deem) fit\\b",
+    "\\bas may be (?:deemed|thought) fit\\b",
+    "\\bif any\\b",
+    "\\bwithout prejudice to\\b",
+    "\\beither\\b[^.?!]{0,80}\\bor\\b",
+    "\\bsuch (?:other|further)\\b[^.?!]{0,60}\\bas may\\b"
+  ],
+  "residual_markers": [
+    "whilst",
+    "doth",
+    "hath",
+    "unto",
+    "thence",
+    "thereunder",
+    "whereof"
+  ]
+}

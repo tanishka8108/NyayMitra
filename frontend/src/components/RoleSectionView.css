@@ -1,0 +1,544 @@
+/* =========================================================
+   ROLE SECTION VIEW — shared body styles
+
+   Sits on top of RoleDashboardShell.css, so the hero and
+   welcome bar are already styled by the shell. Everything
+   here is for the content that goes underneath them.
+
+   Kept deliberately flat and token-matched (page var(--nm-bg),
+   border var(--nm-border), muted var(--nm-text-mute), indigo var(--nm-primary-deep)) so screens
+   built from these classes look like they belong beside the
+   hand-written ones.
+   ========================================================= */
+
+/* ---------- stat strip ---------- */
+
+.section-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+
+  gap: 13px;
+
+  margin-bottom: 20px;
+}
+
+.section-stat {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 15px 17px;
+
+  background: var(--nm-surface);
+
+  border: 1px solid var(--nm-border);
+  border-radius: 15px;
+
+  box-shadow: 0 5px 18px rgba(25, 30, 60, 0.04);
+}
+
+.section-stat span {
+  color: var(--nm-text-mute);
+
+  font-size: 10px;
+  font-weight: 750;
+
+  letter-spacing: 0.07em;
+}
+
+.section-stat strong {
+  color: var(--nm-heading);
+
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.section-stat small {
+  color: var(--nm-text-mute);
+
+  font-size: 11.5px;
+}
+
+/* ---------- card ---------- */
+
+.section-card {
+  padding: 24px 26px;
+
+  background: var(--nm-surface);
+
+  border: 1px solid var(--nm-border);
+  border-radius: 20px;
+
+  box-shadow: 0 8px 25px rgba(25, 30, 60, 0.05);
+}
+
+/* Read after .section-card so it wins on equal specificity. */
+.section-card > h3 {
+  margin: 6px 0 4px;
+
+  color: var(--nm-text);
+
+  font-size: 20px;
+
+  letter-spacing: -0.4px;
+}
+
+.section-card > p {
+  margin: 0 0 18px;
+
+  max-width: 68ch;
+
+  color: var(--nm-text-soft);
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+.section-card + .section-card {
+  margin-top: 18px;
+}
+
+/* ---------- rows (a simple record list) ---------- */
+
+.section-rows {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.section-row {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 13px 15px;
+
+  background: var(--nm-surface-2);
+
+  border: 1px solid var(--nm-border-soft);
+  border-radius: 13px;
+
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.section-row:hover {
+  border-color: var(--nm-border);
+
+  background: var(--nm-primary-soft);
+}
+
+/* Fixed-initials avatar so rows line up without an image API. */
+.section-row-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: var(--nm-primary-grad);
+
+  color: white;
+
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.section-row-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.section-row-body strong {
+  display: block;
+
+  color: var(--nm-heading);
+
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.section-row-body span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--nm-text-mute);
+
+  font-size: 12px;
+
+  line-height: 1.55;
+
+  overflow-wrap: anywhere;
+}
+
+/* Right-hand column: dates, statuses, counts. */
+.section-row-meta {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  text-align: right;
+}
+
+.section-row-meta time {
+  color: var(--nm-text-soft);
+
+  font-size: 12px;
+  font-weight: 650;
+
+  white-space: nowrap;
+}
+
+/* ---------- pills ---------- */
+
+.section-pill {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 11px;
+
+  background: var(--nm-surface-3);
+
+  border: 1px solid var(--nm-border);
+  border-radius: 999px;
+
+  color: var(--nm-text-soft);
+
+  font-size: 10.5px;
+  font-weight: 750;
+
+  white-space: nowrap;
+}
+
+.section-pill.good {
+  background: var(--nm-success-bg);
+
+  border-color: var(--nm-success-border);
+
+  color: var(--nm-success);
+}
+
+.section-pill.warn {
+  background: var(--nm-warn-bg);
+
+  border-color: var(--nm-warn-border);
+
+  color: var(--nm-warn);
+}
+
+.section-pill.info {
+  background: var(--nm-primary-soft);
+
+  border-color: var(--nm-border);
+
+  color: var(--nm-primary);
+}
+
+/* ---------- chips ---------- */
+
+.section-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.section-chip {
+  padding: 7px 13px;
+
+  background: var(--nm-primary-soft);
+
+  border: 1px solid var(--nm-border);
+  border-radius: 999px;
+
+  color: var(--nm-primary-deep);
+
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+/* Second label inside one card. */
+.section-sublabel {
+  display: block;
+
+  margin-top: 22px;
+}
+
+.section-sublabel-list {
+  margin-top: 10px;
+}
+
+/* ---------- full record (one per lawyer) ---------- */
+
+.section-record {
+  padding: 20px;
+
+  background: var(--nm-surface-2);
+
+  border: 1px solid var(--nm-border-soft);
+  border-radius: 15px;
+}
+
+.section-record + .section-record {
+  margin-top: 14px;
+}
+
+.section-record-head {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid var(--nm-border-soft);
+}
+
+.section-record-head > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.section-record-head strong {
+  display: block;
+
+  color: var(--nm-heading);
+
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.section-record-head span:not(.section-pill):not(.section-row-avatar) {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--nm-text-mute);
+
+  font-size: 12px;
+
+  overflow-wrap: anywhere;
+}
+
+.section-field-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+
+  gap: 15px;
+
+  margin: 17px 0 0;
+}
+
+.section-field-grid dt {
+  color: var(--nm-text-mute);
+
+  font-size: 10.5px;
+  font-weight: 650;
+}
+
+.section-field-grid dd {
+  margin: 3px 0 0;
+
+  color: var(--nm-heading);
+
+  font-size: 12.5px;
+  font-weight: 600;
+
+  line-height: 1.55;
+
+  overflow-wrap: anywhere;
+}
+
+.section-record-block {
+  margin-top: 17px;
+}
+
+.section-record-note {
+  margin: 8px 0 0;
+
+  color: var(--nm-text-mute);
+
+  font-size: 12px;
+}
+
+/* ---------- empty state ---------- */
+
+.section-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 44px 24px;
+
+  background: var(--nm-surface-2);
+
+  border: 1px dashed var(--nm-border);
+  border-radius: 15px;
+
+  color: var(--nm-text-mute);
+
+  text-align: center;
+}
+
+.section-empty span {
+  font-size: 24px;
+}
+
+.section-empty p {
+  margin: 0;
+
+  max-width: 46ch;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.section-retry {
+  padding: 9px 18px;
+
+  background: var(--nm-surface);
+
+  border: 1px solid var(--nm-border);
+  border-radius: 11px;
+
+  color: var(--nm-primary-deep);
+
+  font-size: 12px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.section-retry:hover {
+  border-color: var(--nm-primary-deep);
+
+  background: var(--nm-primary-grad);
+
+  color: white;
+}
+
+/* ---------- narrow screens ---------- */
+
+@media (max-width: 720px) {
+  .section-stats {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .section-row {
+    flex-wrap: wrap;
+  }
+
+  .section-row-meta {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+/* =========================================================
+   INLINE ROW CONTROLS
+
+   Row-level decisions — deactivate an account, rule on a
+   registration — sit beside the row they belong to rather
+   than behind a separate screen.
+   ========================================================= */
+
+.section-row-actions {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  max-width: 300px;
+}
+
+.section-toggle,
+.section-action {
+  padding: 6px 12px;
+
+  border: 1px solid var(--nm-border);
+  border-radius: 999px;
+
+  background: var(--nm-surface);
+
+  color: var(--nm-primary);
+
+  font-size: 11px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.section-toggle:hover,
+.section-action:hover {
+  background: var(--nm-primary-soft);
+  border-color: var(--nm-border);
+}
+
+.section-action.is-danger {
+  color: var(--nm-danger);
+}
+
+.section-select {
+  width: 100%;
+
+  margin-top: 7px;
+  padding: 8px 10px;
+
+  border: 1px solid var(--nm-border);
+  border-radius: 10px;
+
+  background: var(--nm-surface);
+
+  color: var(--nm-heading);
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+
+  cursor: pointer;
+}
+
+.section-select:focus {
+  outline: none;
+  border-color: var(--nm-primary);
+}
+
+@media (max-width: 720px) {
+  .section-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .section-row-actions {
+    justify-content: flex-start;
+    max-width: none;
+  }
+}

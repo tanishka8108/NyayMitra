@@ -1,0 +1,625 @@
+/* =========================================================
+   NYAYMITRA — ADMIN DASHBOARD (STAFF MANAGEMENT SCREEN)
+   ========================================================= */
+
+.admin-staff-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 30px;
+}
+
+.admin-staff-card {
+  padding: 26px;
+
+  background: var(--nm-surface);
+
+  border: 1px solid var(--nm-border);
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 8px 25px rgba(25, 30, 60, 0.05);
+}
+
+.admin-staff-card h3 {
+  margin: 0 0 20px;
+
+  color: var(--nm-text);
+
+  font-size: 20px;
+
+  letter-spacing: -0.4px;
+}
+
+
+/* =========================================================
+   ACCESS & ROLES
+
+   The admin's own row (banner) is informational, so it is
+   presented as a statement rather than a control. The staff
+   cards are the only place a toggle can actually change
+   something.
+   ========================================================= */
+
+.admin-access-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding: 22px 26px;
+
+  border: 1px solid var(--nm-border);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(135deg, var(--nm-primary-soft), var(--nm-surface-2));
+
+  box-shadow:
+    0 8px 25px rgba(25, 30, 60, 0.05);
+}
+
+.admin-access-banner h3 {
+  margin: 6px 0;
+
+  color: var(--nm-text);
+
+  font-size: 20px;
+
+  letter-spacing: -0.4px;
+}
+
+.admin-access-banner p {
+  margin: 0;
+
+  max-width: 62ch;
+
+  color: var(--nm-text-soft);
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.admin-access-count {
+  flex: 0 0 auto;
+
+  padding: 7px 13px;
+
+  border: 1px solid var(--nm-border);
+  border-radius: 999px;
+
+  background: var(--nm-surface);
+
+  color: var(--nm-primary-deep);
+
+  font-size: 11.5px;
+  font-weight: 750;
+
+  white-space: nowrap;
+}
+
+.admin-access-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(330px, 1fr));
+
+  gap: 20px;
+}
+
+/* Same element gets .admin-staff-card too; declared later so it wins the
+   tie on equal specificity and pulls the heading back up under the header. */
+.admin-access-card h3 {
+  margin: 6px 0 3px;
+
+  font-size: 18px;
+}
+
+.admin-access-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  margin-bottom: 16px;
+
+  padding-bottom: 16px;
+
+  border-bottom: 1px solid var(--nm-border-soft);
+}
+
+.admin-access-card-head p {
+  margin: 0;
+
+  color: var(--nm-text-mute);
+
+  font-size: 12px;
+
+  overflow-wrap: anywhere;
+}
+
+.admin-access-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.admin-access-list label {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 11px;
+
+  padding: 11px 13px;
+
+  border: 1px solid var(--nm-border-soft);
+  border-radius: 12px;
+
+  background: var(--nm-surface-2);
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.admin-access-list label:hover {
+  border-color: var(--nm-border);
+
+  background: var(--nm-primary-soft);
+}
+
+.admin-access-list input {
+  flex: 0 0 auto;
+
+  width: 16px;
+  height: 16px;
+
+  margin-top: 2px;
+
+  accent-color: var(--nm-primary-deep);
+
+  cursor: pointer;
+}
+
+.admin-access-list strong {
+  display: block;
+
+  color: var(--nm-text);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-access-list small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--nm-text-mute);
+
+  font-size: 11.5px;
+  line-height: 1.55;
+}
+
+.admin-access-actions {
+  display: flex;
+  gap: 9px;
+
+  margin-top: 16px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid var(--nm-border-soft);
+}
+
+.admin-access-actions button {
+  flex: 1;
+
+  padding: 9px 13px;
+
+  border: 1px solid var(--nm-border);
+  border-radius: 11px;
+
+  background: var(--nm-primary-soft);
+
+  color: var(--nm-primary-deep);
+
+  font-size: 12px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.admin-access-actions button:hover {
+  border-color: var(--nm-primary-deep);
+
+  background:
+    var(--nm-primary-grad);
+
+  color: white;
+}
+
+
+/* =========================================================
+   FIELDS
+   ========================================================= */
+
+.admin-staff-field {
+  display: block;
+
+  margin-bottom: 15px;
+}
+
+.admin-staff-field > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--nm-text-soft);
+
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.admin-staff-field input {
+  width: 100%;
+
+  height: 50px;
+
+  padding: 0 15px;
+
+  border: 1px solid var(--nm-border);
+
+  border-radius: 12px;
+
+  background: var(--nm-surface-2);
+
+  color: var(--nm-text);
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.admin-staff-field input:focus {
+  border-color: var(--nm-indigo-400);
+
+  background: var(--nm-surface);
+
+  box-shadow:
+    0 0 0 4px rgba(99, 102, 241, 0.10);
+}
+
+.admin-staff-field input::placeholder {
+  color: var(--nm-text-mute);
+}
+
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.admin-staff-alert {
+  margin-bottom: 15px;
+
+  padding: 12px 14px;
+
+  border-radius: 11px;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.admin-staff-alert.error {
+  border: 1px solid var(--nm-danger-border);
+
+  background: var(--nm-danger-bg);
+
+  color: var(--nm-danger);
+}
+
+.admin-staff-alert.success {
+  border: 1px solid var(--nm-success-border);
+
+  background: var(--nm-success-bg);
+
+  color: var(--nm-success);
+}
+
+
+/* =========================================================
+   SUBMIT
+   ========================================================= */
+
+.admin-staff-submit {
+  width: 100%;
+
+  height: 50px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background:
+    var(--nm-primary-grad);
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 750;
+
+  box-shadow:
+    0 8px 20px rgba(79, 70, 229, 0.22);
+
+  transition: 0.2s ease;
+}
+
+.admin-staff-submit:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(79, 70, 229, 0.3);
+}
+
+
+/* =========================================================
+   STAFF LIST
+   ========================================================= */
+
+.admin-staff-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+}
+
+.admin-staff-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 13px 15px;
+
+  background: var(--nm-surface-2);
+
+  border: 1px solid var(--nm-border);
+
+  border-radius: 13px;
+}
+
+.admin-staff-row-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3730a3,
+      var(--nm-primary)
+    );
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.admin-staff-row > div:nth-child(2) {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.admin-staff-row strong {
+  display: block;
+
+  color: var(--nm-text);
+
+  font-size: 13px;
+}
+
+.admin-staff-row span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--nm-text-mute);
+
+  font-size: 11px;
+}
+
+.admin-staff-row em {
+  flex-shrink: 0;
+
+  padding: 6px 11px;
+
+  border-radius: 999px;
+
+  background: var(--nm-primary-soft);
+
+  color: var(--nm-primary);
+
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 860px) {
+  .admin-staff-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   STAFF WORK ASSIGNMENT
+   ========================================================= */
+
+.admin-staff-row-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-staff-note {
+  margin: 6px 0 16px;
+
+  color: var(--nm-text-soft);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   ACCESS & ROLES — STAFF GROUPED BY WORK, AUTHORITIES
+   GROUPED BY CATEGORY
+   ========================================================= */
+
+.admin-access-groups {
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+.admin-access-bucket {
+  padding: 22px;
+
+  background: var(--nm-surface-2);
+
+  border: 1px solid var(--nm-border);
+  border-radius: 20px;
+}
+
+.admin-access-bucket-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid var(--nm-border-soft);
+}
+
+.admin-access-bucket-head p {
+  margin: 5px 0 0;
+
+  color: var(--nm-text-soft);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.admin-access-categories {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+
+  margin-top: 18px;
+  padding-top: 16px;
+
+  border-top: 1px solid var(--nm-border-soft);
+}
+
+.admin-access-category header {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 9px;
+}
+
+.admin-access-category header .section-sublabel {
+  flex: 1;
+  min-width: 0;
+
+  color: var(--nm-primary);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.admin-access-category header button {
+  padding: 4px 10px;
+
+  border: 1px solid var(--nm-border);
+  border-radius: 999px;
+
+  background: var(--nm-surface);
+
+  color: var(--nm-primary);
+
+  font-size: 10.5px;
+  font-weight: 750;
+
+  cursor: pointer;
+}
+
+.admin-access-category header button:hover {
+  background: var(--nm-primary-soft);
+  border-color: var(--nm-border);
+}
+
+/* =========================================================
+   SERVER-BACKED VERIFICATION ACTIONS
+
+   A ruling is in flight until the server answers, so the
+   buttons grey out instead of firing twice — and the hover
+   tint stays off, because nothing is clickable there yet.
+   ========================================================= */
+
+.section-row-actions .section-action:disabled {
+  opacity: 0.55;
+
+  cursor: default;
+}
+
+.section-row-actions .section-action:disabled:hover {
+  background: var(--nm-surface);
+  border-color: var(--nm-border);
+}

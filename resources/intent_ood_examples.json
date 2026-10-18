@@ -1,0 +1,28 @@
+[
+  {
+    "_meta": {
+      "purpose": "Out-of-scope inputs for calibrating the confidence / margin guard of the 3-way intent classifier. These must NOT be answered - they are greetings, gibberish, cooking, weather, sports and unrelated chat.",
+      "created": "2026-10-04",
+      "expected_behaviour": "Every row should come back as intent \"unclear\" (below the confidence threshold and/or below the top-1 minus top-2 margin rule). If any row passes the guard, the guard is too loose.",
+      "synthetic_warning": "All 15 rows are hand-written synthetic text, unreviewed - indicative only.",
+      "counts": 15,
+      "languages": {"en": 4, "hi": 4, "mr": 4, "hinglish": 3},
+      "schema": ["example_id", "language", "topic", "text", "out_of_scope"]
+    }
+  },
+  {"example_id": "OOD_EN_01", "language": "en", "topic": "greeting", "text": "Hello, good morning! How are you today?", "out_of_scope": true},
+  {"example_id": "OOD_EN_02", "language": "en", "topic": "cooking", "text": "How do I make a good dal tadka at home?", "out_of_scope": true},
+  {"example_id": "OOD_EN_03", "language": "en", "topic": "weather", "text": "What will the weather be like in Mumbai tomorrow?", "out_of_scope": true},
+  {"example_id": "OOD_EN_04", "language": "en", "topic": "gibberish", "text": "qwertyuiop asdfghjkl zxcvbnm 12345 !@#$%", "out_of_scope": true},
+  {"example_id": "OOD_HI_01", "language": "hi", "topic": "greeting", "text": "नमस्ते, आप कैसे हैं?", "out_of_scope": true},
+  {"example_id": "OOD_HI_02", "language": "hi", "topic": "cooking", "text": "दाल तड़का बनाने की विधि बताइए।", "out_of_scope": true},
+  {"example_id": "OOD_HI_03", "language": "hi", "topic": "weather", "text": "आज मौसम कैसा रहेगा?", "out_of_scope": true},
+  {"example_id": "OOD_HI_04", "language": "hi", "topic": "sports", "text": "कल भारत ने क्रिकेट मैच जीत लिया क्या?", "out_of_scope": true},
+  {"example_id": "OOD_MR_01", "language": "mr", "topic": "greeting", "text": "नमस्कार, तुम्ही कसे आहात?", "out_of_scope": true},
+  {"example_id": "OOD_MR_02", "language": "mr", "topic": "cooking", "text": "आमटी भात कसा करावा ते सांगा.", "out_of_scope": true},
+  {"example_id": "OOD_MR_03", "language": "mr", "topic": "sports", "text": "कालच्या क्रिकेट स्पर्धेत कोण जिंकले?", "out_of_scope": true},
+  {"example_id": "OOD_MR_04", "language": "mr", "topic": "gibberish", "text": "zxcvbnm lkjhgfdsa qwertyuiop 98765", "out_of_scope": true},
+  {"example_id": "OOD_HG_01", "language": "hinglish", "topic": "greeting", "text": "Hi, kaise ho aap sab?", "out_of_scope": true},
+  {"example_id": "OOD_HG_02", "language": "hinglish", "topic": "weather", "text": "Aaj mausam kaisa rahega?", "out_of_scope": true},
+  {"example_id": "OOD_HG_03", "language": "hinglish", "topic": "unrelated chat", "text": "Bhai, weekend par movie chalna hai kya?", "out_of_scope": true}
+]

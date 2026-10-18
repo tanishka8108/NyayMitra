@@ -1,0 +1,89 @@
+/* =========================================================
+   LANGUAGE TOGGLE — English / मराठी pill
+
+   Same quiet-surface language as ThemeToggle, so the two
+   controls read as one cluster in the session pill and in
+   the auth corner. The active segment slides on a real
+   background change; transitions are token-driven and the
+   global reduced-motion guard in index.css tames them.
+   ========================================================= */
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+
+  padding: 3px;
+
+  border: 1px solid var(--nm-border);
+  border-radius: 999px;
+
+  background: var(--nm-surface-2);
+}
+
+.lang-toggle button {
+  appearance: none;
+
+  border: 0;
+
+  padding: 5px 11px;
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: var(--nm-text-soft);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  transition:
+    background var(--nm-fast) var(--nm-ease),
+    color var(--nm-fast) var(--nm-ease);
+}
+
+.lang-toggle button:hover {
+  background: var(--nm-primary-soft);
+
+  color: var(--nm-primary-deep);
+}
+
+.lang-toggle button.is-active {
+  background: var(--nm-primary);
+
+  color: #ffffff;
+}
+
+.lang-toggle button:focus-visible {
+  outline: 2px solid var(--nm-indigo-400);
+  outline-offset: 1px;
+}
+
+/* Inside the session pill the border drops so the cluster
+   reads as one unit, same as the theme toggle. */
+.app-session-bar .lang-toggle {
+  border-color: transparent;
+
+  background: transparent;
+}
+
+.app-session-bar .lang-toggle button.is-active {
+  border: 1px solid var(--nm-border);
+}
+
+/* The auth corner carries both controls in a row. */
+.app-theme-corner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Role dashboards: language toggle beside Sign out. */
+.role-dashboard-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

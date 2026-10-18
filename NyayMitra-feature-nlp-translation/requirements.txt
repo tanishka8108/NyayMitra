@@ -1,0 +1,92 @@
+# =========================================================
+# NyayMitra — Translation & Voice Service
+# Verified on Python 3.14.7, Windows (CPU-only)
+# =========================================================
+#
+# Install in two steps. Step 1 must come first, because the PyTorch CPU
+# wheels live on a separate index and the version must match torchaudio:
+#
+#   pip install --index-url https://download.pytorch.org/whl/cpu torch==2.11.0+cpu torchaudio==2.11.0+cpu
+#   pip install -r requirements.txt
+#
+# Also required, but NOT installable via pip on Windows:
+#
+#   * FFmpeg "shared" build (the one that ships avcodec-*.dll).
+#     torchcodec resolves its FFmpeg dependency from its own package
+#     directory, not from PATH — so the av*/sw* DLLs must be copied into
+#       <python>\Lib\site-packages\torchcodec\
+#     Without this, torchaudio.load() fails with
+#       "Could not load libtorchcodec. Likely causes: 1. FFmpeg is not
+#        properly installed in your environment."
+#
+#   * A HuggingFace token, because all three models are gated (gated:"auto"):
+#       ai4bharat/indictrans2-en-indic-dist-200M        (~1.0 GB)
+#       ai4bharat/indictrans2-indic-indic-dist-320M     (~1.2 GB)
+#       ai4bharat/indic-conformer-600m-multilingual     (~2.4 GB)
+#     Accept the license on each model page, then export HF_TOKEN.
+#     Total download ~4.6 GB; first startup loads all three into RAM.
+
+
+# ---------- Web framework ----------
+
+fastapi==0.141.1
+uvicorn==0.53.0
+python-multipart==0.0.32
+
+
+# ---------- Torch stack (CPU only) ----------
+
+torch==2.11.0+cpu
+torchaudio==2.11.0+cpu
+
+# torchaudio 2.9+ delegates all decoding to TorchCodec; without it
+# torchaudio.load() raises "TorchCodec is required for load_with_torchcodec".
+# 0.16 is the release paired with torch 2.11 (supports Python 3.14).
+torchcodec==0.16.0
+
+
+# ---------- IndicTrans2 ----------
+
+# Pinned to <5 on purpose: the IndicTrans2 checkpoints are loaded with
+# trust_remote_code=True against modeling/tokenization code written for the
+# 4.x API. An unpinned install resolves to transformers 5.x.
+transformers==4.57.6
+
+IndicTransToolkit==1.1.1
+sentencepiece==0.2.2   # tokenizer backend
+sacremoses==0.2.0      # pulled in by the tokenizer
+
+
+# ---------- ASR (voice) ----------
+
+# NOT optional: test_asr.py does `from transformers import AutoModel`, and
+# auto_map resolves AutoModel to model_onnx.IndicASRModel, which imports
+# onnxruntime at module scope. Without it, importing test_asr -- and therefore
+# starting the whole service -- fails with ModuleNotFoundError.
+# 1.30.0 is the first release with a cp314 wheel; CPUExecutionProvider only.
+onnxruntime==1.30.0
+
+# Speeds up huggingface_hub downloads substantially (the AI4Bharat repos use
+# Xet storage; without this, hub silently falls back to slower HTTP and the
+# multi-GB snapshot can stall).
+huggingface_hub[hf_xet]==0.36.2
+
+
+# ---------- Audio + upload validation ----------
+
+soundfile==0.14.0
+
+# Windows build that bundles libmagic. On Linux/macOS use python-magic
+# instead — upload_validation.py calls magic.from_buffer() to detect MIME.
+python-magic==0.4.27; sys_platform != "win32"
+python-magic-bin==0.4.14; sys_platform == "win32"
+
+
+# ---------- Court order text extraction ----------
+
+# Pure Python, and imported lazily inside the endpoint, so it costs
+# nothing until an order is actually uploaded. Without it,
+# POST /api/court-order/extract reports that it could not read the file
+# and the court-orders screen falls back to asking for the text.
+pdfplumber==0.11.10
+pytesseract==0.3.13

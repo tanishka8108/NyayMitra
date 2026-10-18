@@ -1,0 +1,27 @@
+services:
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: nyaymitra-frontend
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    depends_on:
+      - database
+
+  database:
+    image: postgres:16-alpine
+    container_name: nyaymitra-database
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: nyaymitra
+      POSTGRES_USER: nyaymitra
+      POSTGRES_PASSWORD: nyaymitra_dev_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

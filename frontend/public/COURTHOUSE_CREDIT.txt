@@ -1,0 +1,13 @@
+Hero photograph: "Supreme Court of India front view 02"
+Photographer: Pinakpani
+Source: Wikimedia Commons
+  https://commons.wikimedia.org/wiki/File:Supreme_Court_of_India_front_view_02.jpg
+Licensed under CC BY-SA 4.0
+  https://creativecommons.org/licenses/by-sa/4.0/
+Legal location: Supreme Court of India, New Delhi.
+
+Used as the homepage hero background (public/courthouse.jpg), cropped to
+3:2 and resized to 1280x853 to match the hero's existing layout. The
+source photograph itself is unmodified in content. Under CC BY-SA 4.0
+this resized derivative stays under the same licence; if you replace the
+image, keep this file accurate.

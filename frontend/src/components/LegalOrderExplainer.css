@@ -1,0 +1,199 @@
+/* =========================================================
+   LEGAL ORDER EXPLAINER
+
+   The three layers themselves are `.order-layers` /
+   `.order-layer` in App.css — the same styling the court
+   order screen uses, so one passage looks the same however
+   it arrived. What is added here is everything around them:
+   the heading, the warnings the service asked to show, the
+   glossary terms the text matched, and the three actions.
+   ========================================================= */
+
+.legal-explainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  padding: 16px;
+  background: var(--nm-surface-2);
+  border: 1px solid var(--nm-border);
+  border-radius: 16px;
+}
+
+.legal-explainer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.legal-explainer-title {
+  color: var(--nm-text);
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.legal-explainer-target {
+  padding: 4px 9px;
+
+  color: var(--nm-primary-deep);
+  background: var(--nm-primary-soft);
+  border: 1px solid var(--nm-border);
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ---- what the service could not promise ------------------ */
+
+.legal-explainer-warnings {
+  margin: 0;
+  padding: 11px 13px 11px 30px;
+
+  color: var(--nm-warn);
+  background: var(--nm-warn-bg);
+  border: 1px solid var(--nm-warn-border);
+  border-radius: 12px;
+
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.legal-explainer-warnings li + li {
+  margin-top: 5px;
+}
+
+/* ---- glossary terms the text matched --------------------- */
+
+.legal-explainer-terms > span {
+  display: block;
+  margin-bottom: 7px;
+
+  color: var(--nm-text-mute);
+  font-size: 10.5px;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.legal-explainer-terms ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legal-explainer-terms li {
+  padding: 4px 9px;
+
+  color: var(--nm-success);
+  background: var(--nm-success-bg);
+  border: 1px solid var(--nm-success-border);
+  border-radius: 999px;
+
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+/* ---- actions --------------------------------------------- */
+
+.legal-explainer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.legal-explainer-actions button {
+  padding: 9px 15px;
+
+  color: var(--nm-primary-deep);
+  background: var(--nm-surface);
+  border: 1px solid var(--nm-border);
+  border-radius: 10px;
+
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.legal-explainer-actions button:hover:not(:disabled) {
+  background: var(--nm-primary-soft);
+}
+
+.legal-explainer-actions button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.legal-explainer-actions .legal-explainer-primary {
+  color: var(--nm-on-primary);
+  background: var(--nm-primary-deep);
+  border-color: var(--nm-primary-deep);
+}
+
+.legal-explainer-actions .legal-explainer-primary:hover:not(:disabled) {
+  background: var(--nm-primary-deep);
+}
+
+.legal-explainer-error {
+  margin: 0;
+
+  color: var(--nm-danger);
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+/* ---- next step ------------------------------------------- */
+
+.legal-explainer-next {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  padding: 13px 15px;
+  background: var(--nm-surface);
+  border: 1px solid var(--nm-border);
+  border-left: 3px solid var(--nm-primary-deep);
+  border-radius: 12px;
+}
+
+.legal-explainer-next strong {
+  color: var(--nm-text);
+  font-size: 13px;
+}
+
+.legal-explainer-next p {
+  margin: 0;
+
+  color: var(--nm-text);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.legal-explainer-next em {
+  color: var(--nm-text-mute);
+  font-size: 11.5px;
+}
+
+.legal-explainer-next small {
+  color: var(--nm-text-mute);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+@media (max-width: 560px) {
+  .legal-explainer {
+    padding: 13px;
+  }
+
+  .legal-explainer-actions button {
+    flex: 1 1 auto;
+  }
+}

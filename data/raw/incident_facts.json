@@ -1,0 +1,908 @@
+[
+  {
+    "fact_id": "INC001_FACT01",
+    "category_id": "INC001",
+    "fact_or_entity": "date/time of transaction",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC001_FACT02",
+    "category_id": "INC001",
+    "fact_or_entity": "amount",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC001_FACT03",
+    "category_id": "INC001",
+    "fact_or_entity": "bank/wallet/payment method",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC001_FACT04",
+    "category_id": "INC001",
+    "fact_or_entity": "transaction/reference number",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC001_FACT05",
+    "category_id": "INC001",
+    "fact_or_entity": "bank statement or transaction receipt",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC001_FACT06",
+    "category_id": "INC001",
+    "fact_or_entity": "whether account/card/UPI credentials were shared",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC002_FACT01",
+    "category_id": "INC002",
+    "fact_or_entity": "caller/sender identity claimed",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC002_FACT02",
+    "category_id": "INC002",
+    "fact_or_entity": "phone number or sender ID",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC002_FACT03",
+    "category_id": "INC002",
+    "fact_or_entity": "message/email/link",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC002_FACT04",
+    "category_id": "INC002",
+    "fact_or_entity": "OTP or credential requested",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC002_FACT05",
+    "category_id": "INC002",
+    "fact_or_entity": "date/time",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC002_FACT06",
+    "category_id": "INC002",
+    "fact_or_entity": "screenshots and communication records",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC003_FACT01",
+    "category_id": "INC003",
+    "fact_or_entity": "affected account/system",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC003_FACT02",
+    "category_id": "INC003",
+    "fact_or_entity": "date/time of suspected access",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC003_FACT03",
+    "category_id": "INC003",
+    "fact_or_entity": "login/security alerts",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC003_FACT04",
+    "category_id": "INC003",
+    "fact_or_entity": "devices involved",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC003_FACT05",
+    "category_id": "INC003",
+    "fact_or_entity": "unauthorized actions observed",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC003_FACT06",
+    "category_id": "INC003",
+    "fact_or_entity": "preserved system/account records",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC004_FACT01",
+    "category_id": "INC004",
+    "fact_or_entity": "person/account involved",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC004_FACT02",
+    "category_id": "INC004",
+    "fact_or_entity": "dates and frequency",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC004_FACT03",
+    "category_id": "INC004",
+    "fact_or_entity": "messages/posts/calls",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC004_FACT04",
+    "category_id": "INC004",
+    "fact_or_entity": "platform",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC004_FACT05",
+    "category_id": "INC004",
+    "fact_or_entity": "whether contact was unwanted or threatening",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC004_FACT06",
+    "category_id": "INC004",
+    "fact_or_entity": "screenshots/URLs",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC005_FACT01",
+    "category_id": "INC005",
+    "fact_or_entity": "fake account/profile URL",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC005_FACT02",
+    "category_id": "INC005",
+    "fact_or_entity": "name/photo/details copied",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC005_FACT03",
+    "category_id": "INC005",
+    "fact_or_entity": "date discovered",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC005_FACT04",
+    "category_id": "INC005",
+    "fact_or_entity": "platform",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC005_FACT05",
+    "category_id": "INC005",
+    "fact_or_entity": "messages sent by fake account",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC005_FACT06",
+    "category_id": "INC005",
+    "fact_or_entity": "screenshots",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC006_FACT01",
+    "category_id": "INC006",
+    "fact_or_entity": "seller/platform",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC006_FACT02",
+    "category_id": "INC006",
+    "fact_or_entity": "order ID",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC006_FACT03",
+    "category_id": "INC006",
+    "fact_or_entity": "product/service promised",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC006_FACT04",
+    "category_id": "INC006",
+    "fact_or_entity": "payment details",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC006_FACT05",
+    "category_id": "INC006",
+    "fact_or_entity": "delivery/return/refund records",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC006_FACT06",
+    "category_id": "INC006",
+    "fact_or_entity": "advertisement or listing",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC007_FACT01",
+    "category_id": "INC007",
+    "fact_or_entity": "service provider",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC007_FACT02",
+    "category_id": "INC007",
+    "fact_or_entity": "service purchased",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC007_FACT03",
+    "category_id": "INC007",
+    "fact_or_entity": "date",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC007_FACT04",
+    "category_id": "INC007",
+    "fact_or_entity": "invoice/receipt",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC007_FACT05",
+    "category_id": "INC007",
+    "fact_or_entity": "problem experienced",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC007_FACT06",
+    "category_id": "INC007",
+    "fact_or_entity": "complaint/refund correspondence",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC008_FACT01",
+    "category_id": "INC008",
+    "fact_or_entity": "relationship of people involved",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC008_FACT02",
+    "category_id": "INC008",
+    "fact_or_entity": "incident dates",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC008_FACT03",
+    "category_id": "INC008",
+    "fact_or_entity": "type of conduct described",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC008_FACT04",
+    "category_id": "INC008",
+    "fact_or_entity": "immediate safety concerns",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC008_FACT05",
+    "category_id": "INC008",
+    "fact_or_entity": "messages/medical records if applicable",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC008_FACT06",
+    "category_id": "INC008",
+    "fact_or_entity": "prior complaints or records",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC009_FACT01",
+    "category_id": "INC009",
+    "fact_or_entity": "workplace/employer",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC009_FACT02",
+    "category_id": "INC009",
+    "fact_or_entity": "relationship of persons",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC009_FACT03",
+    "category_id": "INC009",
+    "fact_or_entity": "date/time/location",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC009_FACT04",
+    "category_id": "INC009",
+    "fact_or_entity": "messages or conduct",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC009_FACT05",
+    "category_id": "INC009",
+    "fact_or_entity": "witnesses",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC009_FACT06",
+    "category_id": "INC009",
+    "fact_or_entity": "existing workplace complaint channel",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC010_FACT01",
+    "category_id": "INC010",
+    "fact_or_entity": "child's age",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC010_FACT02",
+    "category_id": "INC010",
+    "fact_or_entity": "nature/date of concern",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC010_FACT03",
+    "category_id": "INC010",
+    "fact_or_entity": "relationship of persons involved",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC010_FACT04",
+    "category_id": "INC010",
+    "fact_or_entity": "immediate safety concern",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC010_FACT05",
+    "category_id": "INC010",
+    "fact_or_entity": "available evidence",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC010_FACT06",
+    "category_id": "INC010",
+    "fact_or_entity": "trusted adult/authority already contacted",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC011_FACT01",
+    "category_id": "INC011",
+    "fact_or_entity": "exact threat or conduct",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC011_FACT02",
+    "category_id": "INC011",
+    "fact_or_entity": "person involved",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC011_FACT03",
+    "category_id": "INC011",
+    "fact_or_entity": "date/time",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC011_FACT04",
+    "category_id": "INC011",
+    "fact_or_entity": "communication medium",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC011_FACT05",
+    "category_id": "INC011",
+    "fact_or_entity": "witnesses",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC011_FACT06",
+    "category_id": "INC011",
+    "fact_or_entity": "screenshots/recordings where lawfully available",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC012_FACT01",
+    "category_id": "INC012",
+    "fact_or_entity": "date/time/location",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC012_FACT02",
+    "category_id": "INC012",
+    "fact_or_entity": "persons involved",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC012_FACT03",
+    "category_id": "INC012",
+    "fact_or_entity": "injury or harm described",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC012_FACT04",
+    "category_id": "INC012",
+    "fact_or_entity": "medical treatment",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC012_FACT05",
+    "category_id": "INC012",
+    "fact_or_entity": "witnesses",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC012_FACT06",
+    "category_id": "INC012",
+    "fact_or_entity": "available photographs/documents",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC013_FACT01",
+    "category_id": "INC013",
+    "fact_or_entity": "property taken",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC013_FACT02",
+    "category_id": "INC013",
+    "fact_or_entity": "date/time/location",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC013_FACT03",
+    "category_id": "INC013",
+    "fact_or_entity": "how it was taken",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC013_FACT04",
+    "category_id": "INC013",
+    "fact_or_entity": "estimated identifying details",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC013_FACT05",
+    "category_id": "INC013",
+    "fact_or_entity": "witnesses",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC013_FACT06",
+    "category_id": "INC013",
+    "fact_or_entity": "receipts/serial numbers",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC014_FACT01",
+    "category_id": "INC014",
+    "fact_or_entity": "promise/representation",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC014_FACT02",
+    "category_id": "INC014",
+    "fact_or_entity": "money/property involved",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC014_FACT03",
+    "category_id": "INC014",
+    "fact_or_entity": "date",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC014_FACT04",
+    "category_id": "INC014",
+    "fact_or_entity": "agreement/messages",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC014_FACT05",
+    "category_id": "INC014",
+    "fact_or_entity": "payment records",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC014_FACT06",
+    "category_id": "INC014",
+    "fact_or_entity": "what was actually delivered",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC015_FACT01",
+    "category_id": "INC015",
+    "fact_or_entity": "property description",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC015_FACT02",
+    "category_id": "INC015",
+    "fact_or_entity": "location",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC015_FACT03",
+    "category_id": "INC015",
+    "fact_or_entity": "ownership documents",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC015_FACT04",
+    "category_id": "INC015",
+    "fact_or_entity": "parties claiming interest",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC015_FACT05",
+    "category_id": "INC015",
+    "fact_or_entity": "sale/transfer records",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC015_FACT06",
+    "category_id": "INC015",
+    "fact_or_entity": "dates",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC016_FACT01",
+    "category_id": "INC016",
+    "fact_or_entity": "lease/rental agreement",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC016_FACT02",
+    "category_id": "INC016",
+    "fact_or_entity": "landlord/tenant names",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC016_FACT03",
+    "category_id": "INC016",
+    "fact_or_entity": "rent/deposit",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC016_FACT04",
+    "category_id": "INC016",
+    "fact_or_entity": "notice/messages",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC016_FACT05",
+    "category_id": "INC016",
+    "fact_or_entity": "dates",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC016_FACT06",
+    "category_id": "INC016",
+    "fact_or_entity": "property address",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC017_FACT01",
+    "category_id": "INC017",
+    "fact_or_entity": "employer",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC017_FACT02",
+    "category_id": "INC017",
+    "fact_or_entity": "employment dates",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC017_FACT03",
+    "category_id": "INC017",
+    "fact_or_entity": "salary/wage terms",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC017_FACT04",
+    "category_id": "INC017",
+    "fact_or_entity": "amount unpaid",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC017_FACT05",
+    "category_id": "INC017",
+    "fact_or_entity": "pay slips/attendance",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC017_FACT06",
+    "category_id": "INC017",
+    "fact_or_entity": "complaint records",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC018_FACT01",
+    "category_id": "INC018",
+    "fact_or_entity": "identity document type",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC018_FACT02",
+    "category_id": "INC018",
+    "fact_or_entity": "how it was used",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC018_FACT03",
+    "category_id": "INC018",
+    "fact_or_entity": "date discovered",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC018_FACT04",
+    "category_id": "INC018",
+    "fact_or_entity": "account/transaction involved",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC018_FACT05",
+    "category_id": "INC018",
+    "fact_or_entity": "copies/alerts",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC018_FACT06",
+    "category_id": "INC018",
+    "fact_or_entity": "authority or institution involved",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC019_FACT01",
+    "category_id": "INC019",
+    "fact_or_entity": "type of personal data",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC019_FACT02",
+    "category_id": "INC019",
+    "fact_or_entity": "who disclosed/used it",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC019_FACT03",
+    "category_id": "INC019",
+    "fact_or_entity": "where it appeared",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC019_FACT04",
+    "category_id": "INC019",
+    "fact_or_entity": "date",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC019_FACT05",
+    "category_id": "INC019",
+    "fact_or_entity": "consent/notice context",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC019_FACT06",
+    "category_id": "INC019",
+    "fact_or_entity": "screenshots/communications",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC020_FACT01",
+    "category_id": "INC020",
+    "fact_or_entity": "date/time/place",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC020_FACT02",
+    "category_id": "INC020",
+    "fact_or_entity": "persons involved",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC020_FACT03",
+    "category_id": "INC020",
+    "fact_or_entity": "caste-related conduct described",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC020_FACT04",
+    "category_id": "INC020",
+    "fact_or_entity": "witnesses",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC020_FACT05",
+    "category_id": "INC020",
+    "fact_or_entity": "messages/recordings",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC020_FACT06",
+    "category_id": "INC020",
+    "fact_or_entity": "prior complaint or evidence",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC021_FACT01",
+    "category_id": "INC021",
+    "fact_or_entity": "date/time/place",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC021_FACT02",
+    "category_id": "INC021",
+    "fact_or_entity": "vehicles",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC021_FACT03",
+    "category_id": "INC021",
+    "fact_or_entity": "driver/party details",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC021_FACT04",
+    "category_id": "INC021",
+    "fact_or_entity": "injuries/property damage",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC021_FACT05",
+    "category_id": "INC021",
+    "fact_or_entity": "police/insurance details",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC021_FACT06",
+    "category_id": "INC021",
+    "fact_or_entity": "photos/videos/witnesses",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC022_FACT01",
+    "category_id": "INC022",
+    "fact_or_entity": "public authority/service",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC022_FACT02",
+    "category_id": "INC022",
+    "fact_or_entity": "application or complaint number",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC022_FACT03",
+    "category_id": "INC022",
+    "fact_or_entity": "date submitted",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC022_FACT04",
+    "category_id": "INC022",
+    "fact_or_entity": "response/non-response",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC022_FACT05",
+    "category_id": "INC022",
+    "fact_or_entity": "documents",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC022_FACT06",
+    "category_id": "INC022",
+    "fact_or_entity": "grievance portal/reference",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC023_FACT01",
+    "category_id": "INC023",
+    "fact_or_entity": "RTI application date",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC023_FACT02",
+    "category_id": "INC023",
+    "fact_or_entity": "application/reference number",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC023_FACT03",
+    "category_id": "INC023",
+    "fact_or_entity": "public authority",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC023_FACT04",
+    "category_id": "INC023",
+    "fact_or_entity": "information requested",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC023_FACT05",
+    "category_id": "INC023",
+    "fact_or_entity": "response date/content",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC023_FACT06",
+    "category_id": "INC023",
+    "fact_or_entity": "appeal status",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC024_FACT01",
+    "category_id": "INC024",
+    "fact_or_entity": "location",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC024_FACT02",
+    "category_id": "INC024",
+    "fact_or_entity": "type of pollution/environmental issue",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC024_FACT03",
+    "category_id": "INC024",
+    "fact_or_entity": "date/time/frequency",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC024_FACT04",
+    "category_id": "INC024",
+    "fact_or_entity": "source suspected",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC024_FACT05",
+    "category_id": "INC024",
+    "fact_or_entity": "photos/videos/documents",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC024_FACT06",
+    "category_id": "INC024",
+    "fact_or_entity": "complaint/reference number",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC025_FACT01",
+    "category_id": "INC025",
+    "fact_or_entity": "document type",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC025_FACT02",
+    "category_id": "INC025",
+    "fact_or_entity": "issuing court/authority",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC025_FACT03",
+    "category_id": "INC025",
+    "fact_or_entity": "case/notice number",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC025_FACT04",
+    "category_id": "INC025",
+    "fact_or_entity": "date",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC025_FACT05",
+    "category_id": "INC025",
+    "fact_or_entity": "hearing/response date if stated",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC025_FACT06",
+    "category_id": "INC025",
+    "fact_or_entity": "parties named",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  },
+  {
+    "fact_id": "INC025_FACT07",
+    "category_id": "INC025",
+    "fact_or_entity": "enclosures",
+    "importance": "Important for understanding the incident; not itself a legal conclusion."
+  }
+]

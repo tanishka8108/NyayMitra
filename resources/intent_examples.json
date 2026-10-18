@@ -1,0 +1,407 @@
+[
+  {
+    "_meta": {
+      "generated_by": "hand-authored for the 3-way intent classifier; synthetic, pending team review",
+      "date": "2026-10-04",
+      "warning": "The 20 CASE_QUESTION and the 20 FOLLOW_UP examples in this file are SYNTHETIC and have NOT been reviewed by the team member who owns the incident data (TellUsWhatHappened/data/incident_examples.json). They are placeholder training data for the 3-way intent classifier and must be reviewed before production use.",
+      "notes": "The 25 INCIDENT examples are COPIED from the team file data/raw/incident_examples.json (one representative example per category, original example_id values preserved for traceability). That team file is itself flagged is_synthetic=true by the incident-data owner.",
+      "accuracy_note": "Any accuracy number measured on the CASE_QUESTION and FOLLOW_UP classes comes from these synthetic examples only and is NOT real-world performance; treat it as indicative until the incident-data owner has reviewed the examples.",
+      "counts": {
+        "INCIDENT": 25,
+        "CASE_QUESTION": 20,
+        "FOLLOW_UP": 20
+      },
+      "schema": ["example_id", "category_id", "example", "is_synthetic"]
+    }
+  },
+  {
+    "example_id": "INC001_EX01",
+    "category_id": "INCIDENT",
+    "example": "I noticed money was deducted from my bank account even though I did not make that payment.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC002_EX01",
+    "category_id": "INCIDENT",
+    "example": "Someone called saying they were from my bank and asked for my OTP.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC003_EX02",
+    "category_id": "INCIDENT",
+    "example": "My email account was taken over and I cannot access it.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC004_EX03",
+    "category_id": "INCIDENT",
+    "example": "I am receiving repeated threatening or unwanted messages on social media.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC005_EX01",
+    "category_id": "INCIDENT",
+    "example": "Someone created a social media profile using my name and photo.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC006_EX02",
+    "category_id": "INCIDENT",
+    "example": "The product I ordered online never arrived.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC007_EX02",
+    "category_id": "INCIDENT",
+    "example": "The service I received was defective and the company is not resolving it.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC008_EX01",
+    "category_id": "INCIDENT",
+    "example": "I am facing repeated abuse or cruelty at home.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC009_EX01",
+    "category_id": "INCIDENT",
+    "example": "A person at my workplace is making unwanted sexual comments toward me.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC010_EX02",
+    "category_id": "INCIDENT",
+    "example": "A child I know may have been subjected to a sexual offence.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC011_EX01",
+    "category_id": "INCIDENT",
+    "example": "Someone is threatening me and I am worried about what they might do.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC012_EX01",
+    "category_id": "INCIDENT",
+    "example": "Someone hit me during an argument.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC013_EX02",
+    "category_id": "INCIDENT",
+    "example": "Someone grabbed my bag and ran away.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC014_EX02",
+    "category_id": "INCIDENT",
+    "example": "Someone took money from me after making a false promise.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC015_EX01",
+    "category_id": "INCIDENT",
+    "example": "My family is disputing ownership of a piece of land.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC016_EX02",
+    "category_id": "INCIDENT",
+    "example": "My landlord is refusing to return my deposit.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC017_EX01",
+    "category_id": "INCIDENT",
+    "example": "My employer has not paid my salary.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC018_EX01",
+    "category_id": "INCIDENT",
+    "example": "Someone used my identity document without my permission.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC019_EX02",
+    "category_id": "INCIDENT",
+    "example": "My private information was exposed online.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC020_EX01",
+    "category_id": "INCIDENT",
+    "example": "I believe I was targeted because of my caste.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC021_EX01",
+    "category_id": "INCIDENT",
+    "example": "I was injured in a road accident involving another vehicle.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC022_EX02",
+    "category_id": "INCIDENT",
+    "example": "I am facing a problem with a public service.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC023_EX02",
+    "category_id": "INCIDENT",
+    "example": "I have not received the information I requested through RTI.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC024_EX01",
+    "category_id": "INCIDENT",
+    "example": "There is pollution from a nearby activity and I want to report it.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "INC025_EX03",
+    "category_id": "INCIDENT",
+    "example": "Someone sent me a legal notice about a dispute.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ001",
+    "category_id": "CASE_QUESTION",
+    "example": "My hearing happened today and the matter was adjourned, what should I do now?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ002",
+    "category_id": "CASE_QUESTION",
+    "example": "When is my next hearing?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ003",
+    "category_id": "CASE_QUESTION",
+    "example": "What does the arguments stage mean in my case?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ004",
+    "category_id": "CASE_QUESTION",
+    "example": "Why is my case taking so long?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ005",
+    "category_id": "CASE_QUESTION",
+    "example": "What documents do I need for my next hearing?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ006",
+    "category_id": "CASE_QUESTION",
+    "example": "The judge adjourned my matter to next month, is that normal?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ007",
+    "category_id": "CASE_QUESTION",
+    "example": "My case has been pending for two years, what can I do about it?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ008",
+    "category_id": "CASE_QUESTION",
+    "example": "What happens after evidence is concluded in my case?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ009",
+    "category_id": "CASE_QUESTION",
+    "example": "Can you explain what the court order in my matter means?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ010",
+    "category_id": "CASE_QUESTION",
+    "example": "What is the current status of my bail application?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ011",
+    "category_id": "CASE_QUESTION",
+    "example": "What does reserved for orders mean for my case?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ012",
+    "category_id": "CASE_QUESTION",
+    "example": "How many adjournments are usually allowed in a civil case?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ013",
+    "category_id": "CASE_QUESTION",
+    "example": "My lawyer asked me to file a rejoinder, what is that?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ014",
+    "category_id": "CASE_QUESTION",
+    "example": "What is the next step after the first hearing in my consumer complaint?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ015",
+    "category_id": "CASE_QUESTION",
+    "example": "When will the court pronounce judgment in my matter?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ016",
+    "category_id": "CASE_QUESTION",
+    "example": "What does it mean when the court issued notice to the opposite party?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ017",
+    "category_id": "CASE_QUESTION",
+    "example": "I missed my hearing date, what happens to my case now?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ018",
+    "category_id": "CASE_QUESTION",
+    "example": "Is my case listed for hearing tomorrow?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ019",
+    "category_id": "CASE_QUESTION",
+    "example": "What is the difference between a plaint and a written statement?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "CASEQ020",
+    "category_id": "CASE_QUESTION",
+    "example": "The other party did not appear in court, what will happen next in my case?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU001",
+    "category_id": "FOLLOW_UP",
+    "example": "What about the transaction ID?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU002",
+    "category_id": "FOLLOW_UP",
+    "example": "Do I need a lawyer for that?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU003",
+    "category_id": "FOLLOW_UP",
+    "example": "How long will that take?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU004",
+    "category_id": "FOLLOW_UP",
+    "example": "What if I don't have that document?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU005",
+    "category_id": "FOLLOW_UP",
+    "example": "Is that serious?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU006",
+    "category_id": "FOLLOW_UP",
+    "example": "Where can I get that receipt?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU007",
+    "category_id": "FOLLOW_UP",
+    "example": "Can I submit it online?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU008",
+    "category_id": "FOLLOW_UP",
+    "example": "What happens next?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU009",
+    "category_id": "FOLLOW_UP",
+    "example": "Yes, I still have the screenshot.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU010",
+    "category_id": "FOLLOW_UP",
+    "example": "How much does that cost?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU011",
+    "category_id": "FOLLOW_UP",
+    "example": "What else do you need from me?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU012",
+    "category_id": "FOLLOW_UP",
+    "example": "Is there a deadline for that?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU013",
+    "category_id": "FOLLOW_UP",
+    "example": "Who should I contact about it?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU014",
+    "category_id": "FOLLOW_UP",
+    "example": "It happened last week, does that change anything?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU015",
+    "category_id": "FOLLOW_UP",
+    "example": "No, I never shared my OTP with anyone.",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU016",
+    "category_id": "FOLLOW_UP",
+    "example": "Which form should I use for that?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU017",
+    "category_id": "FOLLOW_UP",
+    "example": "Can you explain that in simple words?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU018",
+    "category_id": "FOLLOW_UP",
+    "example": "Do I have to pay for that?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU019",
+    "category_id": "FOLLOW_UP",
+    "example": "Should I do that today itself?",
+    "is_synthetic": true
+  },
+  {
+    "example_id": "FU020",
+    "category_id": "FOLLOW_UP",
+    "example": "Okay, what do I do after that?",
+    "is_synthetic": true
+  }
+]
