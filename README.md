@@ -783,3 +783,6 @@ model name plus the exact texts, so editing a data file - or changing
 `MODEL_NAME` - invalidates both files and rewrites them automatically.
 
 Built by Tanishka.
+
+## System packages (Ubuntu/WSL)
+    sudo apt install -y poppler-utils tesseract-ocr
