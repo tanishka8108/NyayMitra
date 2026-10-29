@@ -185,18 +185,16 @@ function DashboardPage({ onNavigate }: DashboardPageProps) {
             <button
               type="button"
               className="dashboard-action-card"
-              onClick={() => onNavigate("cases")}
+              onClick={() => onNavigate("jurisAI")}
             >
               <span className="dashboard-action-icon purple" aria-hidden="true">
                 <Scale size={22} />
               </span>
-
               <div className="dashboard-action-content">
-                <span>{t("home.tile.cases.label")}</span>
-                <h3>{t("nav.myCases")}</h3>
-                <p>{t("home.tile.cases.desc")}</p>
+                <span>TELL US WHAT HAPPENED</span>
+                <h3>Juris AI</h3>
+                <p>Ask legal questions or understand a court order in simple language.</p>
               </div>
-
               <ArrowUpRight
                 className="dashboard-action-arrow"
                 size={19}
@@ -257,16 +255,16 @@ function DashboardPage({ onNavigate }: DashboardPageProps) {
             <button
               type="button"
               className="dashboard-action-card"
-              onClick={() => onNavigate("orders")}
+              onClick={() => onNavigate("cases")}
             >
-              <span className="dashboard-action-icon orange" aria-hidden="true">
-                <FileText size={22} />
+              <span className="dashboard-action-icon purple" aria-hidden="true">
+                <Scale size={22} />
               </span>
 
               <div className="dashboard-action-content">
-                <span>{t("home.tile.orders.label")}</span>
-                <h3>{t("home.tile.orders.title")}</h3>
-                <p>{t("home.tile.orders.desc")}</p>
+                <span>{t("home.tile.cases.label")}</span>
+                <h3>{t("nav.myCases")}</h3>
+                <p>{t("home.tile.cases.desc")}</p>
               </div>
 
               <ArrowUpRight
@@ -280,16 +278,16 @@ function DashboardPage({ onNavigate }: DashboardPageProps) {
             <button
               type="button"
               className="dashboard-action-card"
-              onClick={() => onNavigate("translation")}
+              onClick={() => onNavigate("orders")}
             >
-              <span className="dashboard-action-icon green" aria-hidden="true">
-                <Languages size={22} />
+              <span className="dashboard-action-icon orange" aria-hidden="true">
+                <FileText size={22} />
               </span>
 
               <div className="dashboard-action-content">
-                <span>{t("home.tile.translate.label")}</span>
-                <h3>{t("home.tile.translate.title")}</h3>
-                <p>{t("home.tile.translate.desc")}</p>
+                <span>{t("home.tile.orders.label")}</span>
+                <h3>{t("home.tile.orders.title")}</h3>
+                <p>{t("home.tile.orders.desc")}</p>
               </div>
 
               <ArrowUpRight
@@ -326,16 +324,18 @@ function DashboardPage({ onNavigate }: DashboardPageProps) {
             <button
               type="button"
               className="dashboard-action-card"
-              onClick={() => onNavigate("jurisAI")}
+              onClick={() => onNavigate("timeline")}
             >
-              <span className="dashboard-action-icon purple" aria-hidden="true">
-                <Scale size={22} />
+              <span className="dashboard-action-icon orange" aria-hidden="true">
+                <History size={22} />
               </span>
+
               <div className="dashboard-action-content">
-                <span>AI LEGAL ASSISTANT</span>
-                <h3>Juris AI</h3>
-                <p>Ask legal questions or understand a court order in simple language.</p>
+                <span>{t("home.tile.timeline.label")}</span>
+                <h3>{t("home.tile.timeline.title")}</h3>
+                <p>{t("home.tile.timeline.desc")}</p>
               </div>
+
               <ArrowUpRight
                 className="dashboard-action-arrow"
                 size={19}
@@ -349,16 +349,16 @@ function DashboardPage({ onNavigate }: DashboardPageProps) {
             <button
               type="button"
               className="dashboard-action-card"
-              onClick={() => onNavigate("timeline")}
+              onClick={() => onNavigate("translation")}
             >
-              <span className="dashboard-action-icon orange" aria-hidden="true">
-                <History size={22} />
+              <span className="dashboard-action-icon green" aria-hidden="true">
+                <Languages size={22} />
               </span>
 
               <div className="dashboard-action-content">
-                <span>{t("home.tile.timeline.label")}</span>
-                <h3>{t("home.tile.timeline.title")}</h3>
-                <p>{t("home.tile.timeline.desc")}</p>
+                <span>{t("home.tile.translate.label")}</span>
+                <h3>{t("home.tile.translate.title")}</h3>
+                <p>{t("home.tile.translate.desc")}</p>
               </div>
 
               <ArrowUpRight
