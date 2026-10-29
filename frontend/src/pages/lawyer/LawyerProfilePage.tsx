@@ -5,8 +5,6 @@ import LawyerAvatar from "../../components/LawyerAvatar";
 
 import {
   getLawyerById,
-  editableSnapshot,
-  toProfileDraft,
   fromProfileDraft,
   saveProfileEdits,
   PROFILE_SCALAR_FIELDS,
@@ -98,13 +96,6 @@ function LawyerProfilePage({
       cancelled = true;
     };
   }, [lawyerId]);
-
-  const startEditing = () => {
-    if (!lawyer) return;
-
-    setDraft(toProfileDraft(editableSnapshot(lawyer)));
-    setEditing(true);
-  };
 
   const updateDraft = (key: keyof ProfileDraft, value: string) => {
     setDraft((previous) => ({ ...previous, [key]: value }));
