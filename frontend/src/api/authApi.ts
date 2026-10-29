@@ -477,7 +477,7 @@ export async function registerLawyerAccount(
       email: input.email.trim().toLowerCase(),
       password: input.password,
       role: "LAWYER",
-      lawyerId: `LAWYER_${String(MOCK_ACCOUNTS.length + 1).padStart(4, "0")}`,
+      lawyerId: `MOCK_LAWYER_${String(MOCK_ACCOUNTS.length + 1).padStart(4, "0")}`,
       /* Mock registrations are never pre-approved — same rule as
          the API, so the pending screen is exercised in demo mode. */
       verificationStatus: "PENDING",

@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { Scale, Pencil, MapPin, SquarePen } from "lucide-react";
+import { Scale, Pencil, MapPin } from "lucide-react";
 import LawyerAvatar from "../../components/LawyerAvatar";
 
 import {
@@ -413,13 +413,6 @@ function LawyerProfilePage({
 
           </div>
 
-          <button
-            type="button"
-            onClick={startEditing}
-          >
-            {t("lawyerProfile.editProfile")}
-            <SquarePen size={14} aria-hidden="true" />
-          </button>
 
         </div>
 

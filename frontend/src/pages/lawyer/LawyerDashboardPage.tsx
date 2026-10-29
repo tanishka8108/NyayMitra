@@ -504,69 +504,6 @@ function LawyerDashboardPage({
 
 
         {/* =================================================
-            VIEW YOUR PROFILE
-
-            The professional snapshot this screen used to
-            print in full now lives behind one button. Every
-            field it showed — experience, practice areas,
-            courts, registration, contact — is on the profile
-            page, where it can also be corrected, so repeating
-            it here only gave a second place to fall out of
-            date.
-            ================================================= */}
-
-        <section className="lawyer-dashboard-cta">
-
-          <div>
-
-            <span>
-              PROFESSIONAL PROFILE
-            </span>
-
-            <h2>
-              View your profile
-            </h2>
-
-            <p>
-              Open the complete profile to read your
-              professional, contact, education and practice
-              information — and edit anything that has
-              changed.
-            </p>
-
-          </div>
-
-
-          <div className="lawyer-dashboard-cta-actions">
-
-            <button
-              type="button"
-              onClick={() =>
-                onNavigate("lawyerProfile")
-              }
-            >
-              View and edit profile →
-            </button>
-
-            <button
-              type="button"
-              className="secondary"
-              onClick={() =>
-                window.scrollTo({
-                  top: 0,
-                  behavior: "smooth",
-                })
-              }
-            >
-              Back to top ↑
-            </button>
-
-          </div>
-
-        </section>
-
-
-        {/* =================================================
             INFORMATION
             ================================================= */}
 
